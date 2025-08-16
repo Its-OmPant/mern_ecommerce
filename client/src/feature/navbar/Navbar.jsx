@@ -17,9 +17,11 @@ import {
 	XMarkIcon,
 } from "@heroicons/react/24/outline";
 
+import { Link } from "react-router";
+
 const navigation = [
-	{ name: "Home", href: "#", current: true },
-	{ name: "About", href: "#", current: false },
+	{ name: "Home", href: "/", current: true },
+	{ name: "About", href: "/about", current: false },
 ];
 
 function classNames(...classes) {
@@ -73,22 +75,23 @@ function Navbar() {
 						</div>
 					</div>
 					<div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-						<button
-							type="button"
-							className="relative rounded-full p-1 mx-3 text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 dark:hover:text-white"
-						>
-							<span className="absolute -inset-1.5" />
-							<span className="sr-only">View notifications</span>
-							<div className="relative">
-								<span className="absolute -top-3 left-4 inline-flex items-center rounded-md bg-yellow-400/10 px-2 py-1 text-xs font-medium text-yellow-400 inset-ring inset-ring-red-400/20">
-									3
-								</span>
-								<ShoppingCartIcon
-									aria-hidden="true"
-									className="size-6 relative"
-								/>
-							</div>
-						</button>
+						<Link to="/cart">
+							<button
+								type="button"
+								className="relative rounded-full p-1 mx-3 text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 dark:hover:text-white"
+							>
+								<span className="absolute -inset-1.5" />
+								<div className="relative">
+									<span className="absolute -top-3 left-4 inline-flex items-center rounded-md bg-yellow-400/10 px-2 py-1 text-xs font-medium text-yellow-400 inset-ring inset-ring-red-400/20">
+										3
+									</span>
+									<ShoppingCartIcon
+										aria-hidden="true"
+										className="size-6 relative"
+									/>
+								</div>
+							</button>
+						</Link>
 
 						{/* Profile dropdown */}
 						<Menu as="div" className="relative ml-3">

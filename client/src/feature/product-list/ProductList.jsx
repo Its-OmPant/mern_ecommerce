@@ -20,6 +20,7 @@ import {
 	Squares2X2Icon,
 } from "@heroicons/react/20/solid";
 import AllProducts from "./AllProducts";
+import Pagination from "./Pagination";
 
 const sortOptions = [
 	{ name: "Most Popular", href: "#", current: true },
