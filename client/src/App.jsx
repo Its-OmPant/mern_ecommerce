@@ -10,6 +10,7 @@ import {
 	CartPage,
 	NotFoundPage,
 	CheckoutPage,
+	ProductDetailsPage,
 } from "./Pages";
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
 			{
 				path: "/",
 				element: <ProductsPage />,
+			},
+			{
+				path: "/product-details",
+				element: <ProductDetailsPage />,
 			},
 			{
 				path: "/cart",
