@@ -1,4 +1,5 @@
 client/node_modules
+client/test.js
 
 # Logs
 logs

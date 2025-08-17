@@ -21,48 +21,251 @@ import {
 } from "@heroicons/react/20/solid";
 import AllProducts from "./AllProducts";
 import Pagination from "./Pagination";
+import { useDispatch } from "react-redux";
+import { fetchAllProductByFiltersAsync } from "../productSlice";
 
 const sortOptions = [
-	{ name: "Most Popular", href: "#", current: true },
-	{ name: "Best Rating", href: "#", current: false },
-	{ name: "Newest", href: "#", current: false },
-	{ name: "Price: Low to High", href: "#", current: false },
-	{ name: "Price: High to Low", href: "#", current: false },
-];
-const filters = [
+	{ name: "Best Rating", _sort: "rating", _order: "desc", current: false },
 	{
-		id: "color",
-		name: "Color",
-		options: [
-			{ value: "white", label: "White", checked: false },
-			{ value: "beige", label: "Beige", checked: false },
-			{ value: "blue", label: "Blue", checked: true },
-			{ value: "brown", label: "Brown", checked: false },
-			{ value: "green", label: "Green", checked: false },
-			{ value: "purple", label: "Purple", checked: false },
-		],
+		name: "Price: Low to High",
+		_sort: "price",
+		_order: "asc",
+		current: false,
 	},
+	{
+		name: "Price: High to Low",
+		_sort: "price",
+		_order: "desc",
+		current: false,
+	},
+];
+
+const filters = [
 	{
 		id: "category",
 		name: "Category",
 		options: [
-			{ value: "new-arrivals", label: "New Arrivals", checked: false },
-			{ value: "sale", label: "Sale", checked: false },
-			{ value: "travel", label: "Travel", checked: true },
-			{ value: "organization", label: "Organization", checked: false },
-			{ value: "accessories", label: "Accessories", checked: false },
+			{
+				value: "beauty",
+				label: "Beauty",
+				checked: false,
+			},
+			{
+				value: "fragrances",
+				label: "Fragrances",
+				checked: false,
+			},
+			{
+				value: "furniture",
+				label: "Furniture",
+				checked: false,
+			},
+			{
+				value: "groceries",
+				label: "Groceries",
+				checked: false,
+			},
+			{
+				value: "home decoration",
+				label: "Home decoration",
+				checked: false,
+			},
+			{
+				value: "kitchen accessories",
+				label: "Kitchen accessories",
+				checked: false,
+			},
+			{
+				value: "laptops",
+				label: "Laptops",
+				checked: false,
+			},
+			{
+				value: "mens shirts",
+				label: "Mens shirts",
+				checked: false,
+			},
+			{
+				value: "mens shoes",
+				label: "Mens shoes",
+				checked: false,
+			},
+			{
+				value: "mens watches",
+				label: "Mens watches",
+				checked: false,
+			},
+			{
+				value: "mobile accessories",
+				label: "Mobile accessories",
+				checked: false,
+			},
 		],
 	},
 	{
-		id: "size",
-		name: "Size",
+		id: "brand",
+		name: "Brand",
 		options: [
-			{ value: "2l", label: "2L", checked: false },
-			{ value: "6l", label: "6L", checked: false },
-			{ value: "12l", label: "12L", checked: false },
-			{ value: "18l", label: "18L", checked: false },
-			{ value: "20l", label: "20L", checked: false },
-			{ value: "40l", label: "40L", checked: true },
+			{
+				value: "Essence",
+				label: "Essence",
+				checked: false,
+			},
+			{
+				value: "Glamour Beauty",
+				label: "Glamour Beauty",
+				checked: false,
+			},
+			{
+				value: "Velvet Touch",
+				label: "Velvet Touch",
+				checked: false,
+			},
+			{
+				value: "Chic Cosmetics",
+				label: "Chic Cosmetics",
+				checked: false,
+			},
+			{
+				value: "Nail Couture",
+				label: "Nail Couture",
+				checked: false,
+			},
+			{
+				value: "Calvin Klein",
+				label: "Calvin Klein",
+				checked: false,
+			},
+			{
+				value: "Chanel",
+				label: "Chanel",
+				checked: false,
+			},
+			{
+				value: "Dior",
+				label: "Dior",
+				checked: false,
+			},
+			{
+				value: "Dolce & Gabbana",
+				label: "Dolce & Gabbana",
+				checked: false,
+			},
+			{
+				value: "Gucci",
+				label: "Gucci",
+				checked: false,
+			},
+			{
+				value: "Annibale Colombo",
+				label: "Annibale Colombo",
+				checked: false,
+			},
+			{
+				value: "Furniture Co.",
+				label: "Furniture Co.",
+				checked: false,
+			},
+			{
+				value: "Knoll",
+				label: "Knoll",
+				checked: false,
+			},
+			{
+				value: "Bath Trends",
+				label: "Bath Trends",
+				checked: false,
+			},
+			{
+				value: "Unbranded",
+				label: "Unbranded",
+				checked: false,
+			},
+			{
+				value: "Apple",
+				label: "Apple",
+				checked: false,
+			},
+			{
+				value: "Asus",
+				label: "Asus",
+				checked: false,
+			},
+			{
+				value: "Huawei",
+				label: "Huawei",
+				checked: false,
+			},
+			{
+				value: "Lenovo",
+				label: "Lenovo",
+				checked: false,
+			},
+			{
+				value: "Dell",
+				label: "Dell",
+				checked: false,
+			},
+			{
+				value: "Fashion Trends",
+				label: "Fashion Trends",
+				checked: false,
+			},
+			{
+				value: "Gigabyte",
+				label: "Gigabyte",
+				checked: false,
+			},
+			{
+				value: "Classic Wear",
+				label: "Classic Wear",
+				checked: false,
+			},
+			{
+				value: "Casual Comfort",
+				label: "Casual Comfort",
+				checked: false,
+			},
+			{
+				value: "Urban Chic",
+				label: "Urban Chic",
+				checked: false,
+			},
+			{
+				value: "Nike",
+				label: "Nike",
+				checked: false,
+			},
+			{
+				value: "Puma",
+				label: "Puma",
+				checked: false,
+			},
+			{
+				value: "Off White",
+				label: "Off White",
+				checked: false,
+			},
+			{
+				value: "Fashion Timepieces",
+				label: "Fashion Timepieces",
+				checked: false,
+			},
+			{
+				value: "Longines",
+				label: "Longines",
+				checked: false,
+			},
+			{
+				value: "Rolex",
+				label: "Rolex",
+				checked: false,
+			},
+			{
+				value: "Amazon",
+				label: "Amazon",
+				checked: false,
+			},
 		],
 	},
 ];
@@ -73,6 +276,37 @@ function classNames(...classes) {
 
 function ProductList() {
 	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+	const [appliedFilter, setAppliedFilter] = useState([]);
+	const dispatch = useDispatch();
+
+	function handleFilterChange(e, section, option) {
+		let fl = [];
+		if (e.target.checked) {
+			fl = [...appliedFilter, { [section.id]: option }];
+		} else {
+			fl = appliedFilter.filter((obj) => obj[section.id] !== option);
+		}
+
+		// not working correctly for multiple values due to mock json
+		// TODO: create API to support multiple filters
+		// console.log(fl);
+		setAppliedFilter(fl);
+		dispatch(fetchAllProductByFiltersAsync(fl));
+	}
+
+	function handleSort(e, sortOptionObject) {
+		const index = appliedFilter.findIndex((f) =>
+			Object.prototype.hasOwnProperty.call(f, "_sort")
+		);
+		const filter = [...appliedFilter];
+		const obj =
+			sortOptionObject["_order"] == "asc"
+				? { _sort: sortOptionObject["_sort"] }
+				: { _sort: `-${sortOptionObject["_sort"]}` };
+		filter.splice(index, 1, obj);
+		setAppliedFilter(filter);
+		dispatch(fetchAllProductByFiltersAsync(filter));
+	}
 
 	return (
 		<div className="bg-white">
@@ -153,6 +387,15 @@ function ProductList() {
 																		id={`filter-mobile-${section.id}-${optionIdx}`}
 																		name={`${section.id}[]`}
 																		type="checkbox"
+																		onChange={(
+																			e
+																		) =>
+																			handleFilterChange(
+																				e,
+																				section,
+																				option.value
+																			)
+																		}
 																		className="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
 																	/>
 																	<svg
@@ -225,8 +468,10 @@ function ProductList() {
 									<div className="py-1">
 										{sortOptions.map((option) => (
 											<MenuItem key={option.name}>
-												<a
-													href={option.href}
+												<p
+													onClick={(e) =>
+														handleSort(e, option)
+													}
 													className={classNames(
 														option.current
 															? "font-medium text-gray-900"
@@ -235,7 +480,7 @@ function ProductList() {
 													)}
 												>
 													{option.name}
-												</a>
+												</p>
 											</MenuItem>
 										))}
 									</div>
@@ -320,6 +565,15 @@ function ProductList() {
 																		id={`filter-${section.id}-${optionIdx}`}
 																		name={`${section.id}[]`}
 																		type="checkbox"
+																		onChange={(
+																			e
+																		) =>
+																			handleFilterChange(
+																				e,
+																				section,
+																				option.value
+																			)
+																		}
 																		className="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
 																	/>
 																	<svg
