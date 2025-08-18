@@ -1,8 +1,8 @@
 import React from "react";
-import ProductList from "../feature/product/components/ProductList";
+import Products from "../feature/product/components/Products";
 
 function ProductsPage() {
-	return <ProductList />;
+	return <Products />;
 }
 
 export default ProductsPage;

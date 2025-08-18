@@ -1,34 +1,17 @@
 import Pagination from "./Pagination";
 import { Link } from "react-router";
-import Data from "../../../../mock_data.json";
 import { StarIcon } from "@heroicons/react/20/solid";
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import {
-	fetchAllProductsAsync,
-	getAllProducts,
-	getLoadingState,
-} from "../productSlice";
 
 // const products = Data.products;
 
-export default function AllProducts() {
-	const products = useSelector(getAllProducts);
-	const isLoading = useSelector(getLoadingState);
-
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		dispatch(fetchAllProductsAsync());
-	}, []);
-
-	if (isLoading.toLowerCase() == "loading") return <h1>Loading</h1>;
+export default function ProductGrid({ products, loadState }) {
+	if (loadState.toLowerCase() == "loading") return <h1>Loading</h1>;
 
 	return products.length == 0 ? (
 		<h2>Products not available</h2>
 	) : (
 		<>
-			<div className="bg-white mb-10">
+			<div className="mb-10">
 				<div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
 					<div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
 						{products.map((product) => (
@@ -60,7 +43,6 @@ export default function AllProducts() {
 					</div>
 				</div>
 			</div>
-			<Pagination />
 		</>
 	);
 }
