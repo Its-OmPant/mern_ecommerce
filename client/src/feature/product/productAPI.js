@@ -50,3 +50,33 @@ export async function fetchAllProductsByFilters(filters, sort, pagination) {
 		return { data: [], error };
 	}
 }
+
+export async function fetchAllFilters() {
+	try {
+		// TODO: replace hardcoded server url
+		const response = await fetch("http://localhost:3000/filters");
+		if (!response.ok) {
+			throw new Error(`Server error: ${response.status}`);
+		}
+		const data = await response.json();
+		return { data };
+	} catch (error) {
+		console.error("Failed to fetch products:", error);
+		return { data: [], error };
+	}
+}
+
+export async function fetchSortingOptions() {
+	try {
+		// TODO: replace hardcoded server url
+		const response = await fetch("http://localhost:3000/sortOptions");
+		if (!response.ok) {
+			throw new Error(`Server error: ${response.status}`);
+		}
+		const data = await response.json();
+		return { data };
+	} catch (error) {
+		console.error("Failed to fetch products:", error);
+		return { data: [], error };
+	}
+}

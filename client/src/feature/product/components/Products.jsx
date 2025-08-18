@@ -22,257 +22,20 @@ import {
 import ProductGrid from "./ProductGrid";
 import { useDispatch, useSelector } from "react-redux";
 import {
+	fetchAllFiltersAsync,
 	fetchAllProductByFiltersAsync,
+	fetchSortingOptionsAsync,
 	selectTotalItems,
 	selectTotalPages,
 } from "../productSlice";
-import { selectAllProducts, selectLoadingState } from "../productSlice";
+import {
+	selectAllProducts,
+	selectLoadingState,
+	selectAllFilters,
+	selectAllSortOptions,
+} from "../productSlice";
 import Pagination from "./Pagination";
 import { PAGINATION_LIMIT } from "../../../app/constants";
-
-const sortOptions = [
-	{ name: "Best Rating", _sort: "-rating", current: false },
-	{
-		name: "Price: Low to High",
-		_sort: "price",
-		current: false,
-	},
-	{
-		name: "Price: High to Low",
-		_sort: "-price",
-		current: false,
-	},
-];
-
-const filters = [
-	{
-		id: "category",
-		name: "Category",
-		options: [
-			{
-				value: "beauty",
-				label: "Beauty",
-				checked: false,
-			},
-			{
-				value: "fragrances",
-				label: "Fragrances",
-				checked: false,
-			},
-			{
-				value: "furniture",
-				label: "Furniture",
-				checked: false,
-			},
-			{
-				value: "groceries",
-				label: "Groceries",
-				checked: false,
-			},
-			{
-				value: "home decoration",
-				label: "Home decoration",
-				checked: false,
-			},
-			{
-				value: "kitchen accessories",
-				label: "Kitchen accessories",
-				checked: false,
-			},
-			{
-				value: "laptops",
-				label: "Laptops",
-				checked: false,
-			},
-			{
-				value: "mens shirts",
-				label: "Mens shirts",
-				checked: false,
-			},
-			{
-				value: "mens shoes",
-				label: "Mens shoes",
-				checked: false,
-			},
-			{
-				value: "mens watches",
-				label: "Mens watches",
-				checked: false,
-			},
-			{
-				value: "mobile accessories",
-				label: "Mobile accessories",
-				checked: false,
-			},
-		],
-	},
-	{
-		id: "brand",
-		name: "Brand",
-		options: [
-			{
-				value: "Essence",
-				label: "Essence",
-				checked: false,
-			},
-			{
-				value: "Glamour Beauty",
-				label: "Glamour Beauty",
-				checked: false,
-			},
-			{
-				value: "Velvet Touch",
-				label: "Velvet Touch",
-				checked: false,
-			},
-			{
-				value: "Chic Cosmetics",
-				label: "Chic Cosmetics",
-				checked: false,
-			},
-			{
-				value: "Nail Couture",
-				label: "Nail Couture",
-				checked: false,
-			},
-			{
-				value: "Calvin Klein",
-				label: "Calvin Klein",
-				checked: false,
-			},
-			{
-				value: "Chanel",
-				label: "Chanel",
-				checked: false,
-			},
-			{
-				value: "Dior",
-				label: "Dior",
-				checked: false,
-			},
-			{
-				value: "Dolce & Gabbana",
-				label: "Dolce & Gabbana",
-				checked: false,
-			},
-			{
-				value: "Gucci",
-				label: "Gucci",
-				checked: false,
-			},
-			{
-				value: "Annibale Colombo",
-				label: "Annibale Colombo",
-				checked: false,
-			},
-			{
-				value: "Furniture Co.",
-				label: "Furniture Co.",
-				checked: false,
-			},
-			{
-				value: "Knoll",
-				label: "Knoll",
-				checked: false,
-			},
-			{
-				value: "Bath Trends",
-				label: "Bath Trends",
-				checked: false,
-			},
-			{
-				value: "Unbranded",
-				label: "Unbranded",
-				checked: false,
-			},
-			{
-				value: "Apple",
-				label: "Apple",
-				checked: false,
-			},
-			{
-				value: "Asus",
-				label: "Asus",
-				checked: false,
-			},
-			{
-				value: "Huawei",
-				label: "Huawei",
-				checked: false,
-			},
-			{
-				value: "Lenovo",
-				label: "Lenovo",
-				checked: false,
-			},
-			{
-				value: "Dell",
-				label: "Dell",
-				checked: false,
-			},
-			{
-				value: "Fashion Trends",
-				label: "Fashion Trends",
-				checked: false,
-			},
-			{
-				value: "Gigabyte",
-				label: "Gigabyte",
-				checked: false,
-			},
-			{
-				value: "Classic Wear",
-				label: "Classic Wear",
-				checked: false,
-			},
-			{
-				value: "Casual Comfort",
-				label: "Casual Comfort",
-				checked: false,
-			},
-			{
-				value: "Urban Chic",
-				label: "Urban Chic",
-				checked: false,
-			},
-			{
-				value: "Nike",
-				label: "Nike",
-				checked: false,
-			},
-			{
-				value: "Puma",
-				label: "Puma",
-				checked: false,
-			},
-			{
-				value: "Off White",
-				label: "Off White",
-				checked: false,
-			},
-			{
-				value: "Fashion Timepieces",
-				label: "Fashion Timepieces",
-				checked: false,
-			},
-			{
-				value: "Longines",
-				label: "Longines",
-				checked: false,
-			},
-			{
-				value: "Rolex",
-				label: "Rolex",
-				checked: false,
-			},
-			{
-				value: "Amazon",
-				label: "Amazon",
-				checked: false,
-			},
-		],
-	},
-];
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
@@ -283,6 +46,8 @@ function Products() {
 	const loadState = useSelector(selectLoadingState);
 	const totalItems = useSelector(selectTotalItems);
 	const totalPages = useSelector(selectTotalPages);
+	const filters = useSelector(selectAllFilters);
+	const sortOptions = useSelector(selectAllSortOptions);
 
 	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 	const [appliedFilter, setAppliedFilter] = useState([]);
@@ -370,10 +135,15 @@ function Products() {
 		});
 	}, [appliedFilter, appliedSort]);
 
+	useEffect(() => {
+		dispatch(fetchAllFiltersAsync());
+		dispatch(fetchSortingOptionsAsync());
+	}, []);
+
 	return (
 		<div className="bg-white">
-			{/* Mobile filter dialog */}
 			<MobileFilters
+				filters={filters}
 				mobileFiltersOpen={mobileFiltersOpen}
 				setMobileFiltersOpen={setMobileFiltersOpen}
 				handleFilterChange={handleFilterChange}
@@ -402,37 +172,32 @@ function Products() {
 								className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
 							>
 								<div className="py-1">
-									{sortOptions.map((option) => (
-										<MenuItem key={option.name}>
-											<p
-												onClick={(e) =>
-													handleSort(e, option)
-												}
-												className={classNames(
-													option.current
-														? "font-medium text-gray-900"
-														: "text-gray-500",
-													"block px-4 py-2 text-sm data-focus:bg-gray-100 data-focus:outline-hidden"
-												)}
-											>
-												{option.name}
-											</p>
-										</MenuItem>
-									))}
+									{sortOptions && sortOptions.length > 1 ? (
+										sortOptions.map((option) => (
+											<MenuItem key={option.name}>
+												<p
+													onClick={(e) =>
+														handleSort(e, option)
+													}
+													className={classNames(
+														option.current
+															? "font-medium text-gray-900"
+															: "text-gray-500",
+														"block px-4 py-2 text-sm data-focus:bg-gray-100 data-focus:outline-hidden"
+													)}
+												>
+													{option.name}
+												</p>
+											</MenuItem>
+										))
+									) : (
+										<h3 className="m-2">
+											Sort Options Unavailable
+										</h3>
+									)}
 								</div>
 							</MenuItems>
 						</Menu>
-
-						<button
-							type="button"
-							className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7"
-						>
-							<span className="sr-only">View grid</span>
-							<Squares2X2Icon
-								aria-hidden="true"
-								className="size-5"
-							/>
-						</button>
 						<button
 							type="button"
 							onClick={() => setMobileFiltersOpen(true)}
@@ -446,13 +211,11 @@ function Products() {
 
 				<section aria-labelledby="products-heading" className="pt-6">
 					<div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-						{/* Desktop Filters */}
 						<DesktopFilters
+							filters={filters}
 							handleFilterChange={handleFilterChange}
 						/>
-						{/* Product grid */}
 						<div className="lg:col-span-3">
-							{/* All Products */}
 							<ProductGrid
 								products={products}
 								loadState={loadState}
@@ -473,6 +236,7 @@ function Products() {
 }
 
 function MobileFilters({
+	filters = { filters },
 	mobileFiltersOpen,
 	setMobileFiltersOpen,
 	handleFilterChange,
@@ -510,94 +274,100 @@ function MobileFilters({
 
 					{/* Filters */}
 					<form className="mt-4 border-t border-gray-200">
-						{filters.map((section) => (
-							<Disclosure
-								key={section.id}
-								as="div"
-								className="border-t border-gray-200 px-4 py-6"
-							>
-								<h3 className="-mx-2 -my-3 flow-root">
-									<DisclosureButton className="group flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
-										<span className="font-medium text-gray-900">
-											{section.name}
-										</span>
-										<span className="ml-6 flex items-center">
-											<PlusIcon
-												aria-hidden="true"
-												className="size-5 group-data-open:hidden"
-											/>
-											<MinusIcon
-												aria-hidden="true"
-												className="size-5 group-not-data-open:hidden"
-											/>
-										</span>
-									</DisclosureButton>
-								</h3>
-								<DisclosurePanel className="pt-6">
-									<div className="space-y-6">
-										{section.options.map(
-											(option, optionIdx) => (
-												<div
-													key={option.value}
-													className="flex gap-3"
-												>
-													<div className="flex h-5 shrink-0 items-center">
-														<div className="group grid size-4 grid-cols-1">
-															<input
-																defaultValue={
-																	option.value
-																}
-																id={`filter-mobile-${section.id}-${optionIdx}`}
-																name={`${section.id}[]`}
-																type="checkbox"
-																onChange={(e) =>
-																	handleFilterChange(
-																		e,
-																		section,
-																		option.value
-																	)
-																}
-																className="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
-															/>
-															<svg
-																fill="none"
-																viewBox="0 0 14 14"
-																className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25"
-															>
-																<path
-																	d="M3 8L6 11L11 3.5"
-																	strokeWidth={
-																		2
-																	}
-																	strokeLinecap="round"
-																	strokeLinejoin="round"
-																	className="opacity-0 group-has-checked:opacity-100"
-																/>
-																<path
-																	d="M3 7H11"
-																	strokeWidth={
-																		2
-																	}
-																	strokeLinecap="round"
-																	strokeLinejoin="round"
-																	className="opacity-0 group-has-indeterminate:opacity-100"
-																/>
-															</svg>
-														</div>
-													</div>
-													<label
-														htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
-														className="min-w-0 flex-1 text-gray-500"
+						{filters && filters.length > 1 ? (
+							filters.map((section) => (
+								<Disclosure
+									key={section.id}
+									as="div"
+									className="border-t border-gray-200 px-4 py-6"
+								>
+									<h3 className="-mx-2 -my-3 flow-root">
+										<DisclosureButton className="group flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
+											<span className="font-medium text-gray-900">
+												{section.name}
+											</span>
+											<span className="ml-6 flex items-center">
+												<PlusIcon
+													aria-hidden="true"
+													className="size-5 group-data-open:hidden"
+												/>
+												<MinusIcon
+													aria-hidden="true"
+													className="size-5 group-not-data-open:hidden"
+												/>
+											</span>
+										</DisclosureButton>
+									</h3>
+									<DisclosurePanel className="pt-6">
+										<div className="space-y-6">
+											{section.options.map(
+												(option, optionIdx) => (
+													<div
+														key={option.value}
+														className="flex gap-3"
 													>
-														{option.label}
-													</label>
-												</div>
-											)
-										)}
-									</div>
-								</DisclosurePanel>
-							</Disclosure>
-						))}
+														<div className="flex h-5 shrink-0 items-center">
+															<div className="group grid size-4 grid-cols-1">
+																<input
+																	defaultValue={
+																		option.value
+																	}
+																	id={`filter-mobile-${section.id}-${optionIdx}`}
+																	name={`${section.id}[]`}
+																	type="checkbox"
+																	onChange={(
+																		e
+																	) =>
+																		handleFilterChange(
+																			e,
+																			section,
+																			option.value
+																		)
+																	}
+																	className="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
+																/>
+																<svg
+																	fill="none"
+																	viewBox="0 0 14 14"
+																	className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25"
+																>
+																	<path
+																		d="M3 8L6 11L11 3.5"
+																		strokeWidth={
+																			2
+																		}
+																		strokeLinecap="round"
+																		strokeLinejoin="round"
+																		className="opacity-0 group-has-checked:opacity-100"
+																	/>
+																	<path
+																		d="M3 7H11"
+																		strokeWidth={
+																			2
+																		}
+																		strokeLinecap="round"
+																		strokeLinejoin="round"
+																		className="opacity-0 group-has-indeterminate:opacity-100"
+																	/>
+																</svg>
+															</div>
+														</div>
+														<label
+															htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
+															className="min-w-0 flex-1 text-gray-500"
+														>
+															{option.label}
+														</label>
+													</div>
+												)
+											)}
+										</div>
+									</DisclosurePanel>
+								</Disclosure>
+							))
+						) : (
+							<h3 className="m-3">No Filters Available</h3>
+						)}
 					</form>
 				</DialogPanel>
 			</div>
@@ -605,87 +375,96 @@ function MobileFilters({
 	);
 }
 
-function DesktopFilters({ handleFilterChange }) {
+function DesktopFilters({ filters = { filters }, handleFilterChange }) {
 	return (
 		<form className="hidden lg:block">
-			{filters.map((section) => (
-				<Disclosure
-					key={section.id}
-					as="div"
-					className="border-b border-gray-200 py-6"
-				>
-					<h3 className="-my-3 flow-root">
-						<DisclosureButton className="group flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-							<span className="font-medium text-gray-900">
-								{section.name}
-							</span>
-							<span className="ml-6 flex items-center">
-								<PlusIcon
-									aria-hidden="true"
-									className="size-5 group-data-open:hidden"
-								/>
-								<MinusIcon
-									aria-hidden="true"
-									className="size-5 group-not-data-open:hidden"
-								/>
-							</span>
-						</DisclosureButton>
-					</h3>
-					<DisclosurePanel className="pt-6">
-						<div className="space-y-4">
-							{section.options.map((option, optionIdx) => (
-								<div key={option.value} className="flex gap-3">
-									<div className="flex h-5 shrink-0 items-center">
-										<div className="group grid size-4 grid-cols-1">
-											<input
-												defaultValue={option.value}
-												defaultChecked={option.checked}
-												id={`filter-${section.id}-${optionIdx}`}
-												name={`${section.id}[]`}
-												type="checkbox"
-												onChange={(e) =>
-													handleFilterChange(
-														e,
-														section,
-														option.value
-													)
-												}
-												className="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
-											/>
-											<svg
-												fill="none"
-												viewBox="0 0 14 14"
-												className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25"
-											>
-												<path
-													d="M3 8L6 11L11 3.5"
-													strokeWidth={2}
-													strokeLinecap="round"
-													strokeLinejoin="round"
-													className="opacity-0 group-has-checked:opacity-100"
-												/>
-												<path
-													d="M3 7H11"
-													strokeWidth={2}
-													strokeLinecap="round"
-													strokeLinejoin="round"
-													className="opacity-0 group-has-indeterminate:opacity-100"
-												/>
-											</svg>
-										</div>
-									</div>
-									<label
-										htmlFor={`filter-${section.id}-${optionIdx}`}
-										className="text-sm text-gray-600"
+			{filters && filters.length > 1 ? (
+				filters.map((section) => (
+					<Disclosure
+						key={section.id}
+						as="div"
+						className="border-b border-gray-200 py-6"
+					>
+						<h3 className="-my-3 flow-root">
+							<DisclosureButton className="group flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
+								<span className="font-medium text-gray-900">
+									{section.name}
+								</span>
+								<span className="ml-6 flex items-center">
+									<PlusIcon
+										aria-hidden="true"
+										className="size-5 group-data-open:hidden"
+									/>
+									<MinusIcon
+										aria-hidden="true"
+										className="size-5 group-not-data-open:hidden"
+									/>
+								</span>
+							</DisclosureButton>
+						</h3>
+						<DisclosurePanel className="pt-6">
+							<div className="space-y-4">
+								{section.options.map((option, optionIdx) => (
+									<div
+										key={option.value}
+										className="flex gap-3"
 									>
-										{option.label}
-									</label>
-								</div>
-							))}
-						</div>
-					</DisclosurePanel>
-				</Disclosure>
-			))}
+										<div className="flex h-5 shrink-0 items-center">
+											<div className="group grid size-4 grid-cols-1">
+												<input
+													defaultValue={option.value}
+													defaultChecked={
+														option.checked
+													}
+													id={`filter-${section.id}-${optionIdx}`}
+													name={`${section.id}[]`}
+													type="checkbox"
+													onChange={(e) =>
+														handleFilterChange(
+															e,
+															section,
+															option.value
+														)
+													}
+													className="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
+												/>
+												<svg
+													fill="none"
+													viewBox="0 0 14 14"
+													className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25"
+												>
+													<path
+														d="M3 8L6 11L11 3.5"
+														strokeWidth={2}
+														strokeLinecap="round"
+														strokeLinejoin="round"
+														className="opacity-0 group-has-checked:opacity-100"
+													/>
+													<path
+														d="M3 7H11"
+														strokeWidth={2}
+														strokeLinecap="round"
+														strokeLinejoin="round"
+														className="opacity-0 group-has-indeterminate:opacity-100"
+													/>
+												</svg>
+											</div>
+										</div>
+										<label
+											htmlFor={`filter-${section.id}-${optionIdx}`}
+											className="text-sm text-gray-600"
+										>
+											{option.label}
+										</label>
+									</div>
+								))}
+							</div>
+						</DisclosurePanel>
+					</Disclosure>
+				))
+			) : (
+				<h3>No Filters Available</h3>
+			)}
 		</form>
 	);
 }
