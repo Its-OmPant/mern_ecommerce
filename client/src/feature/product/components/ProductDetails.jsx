@@ -1,76 +1,62 @@
+import { useEffect } from "react";
 import { ShoppingCartIcon, StarIcon } from "@heroicons/react/20/solid";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router";
+import { fetchProductByIdAsync, selectCurrentProduct } from "../productSlice";
 
-const product = {
-	name: "Basic Tee 6-Pack",
-	price: "$192",
-	href: "#",
-	breadcrumbs: [
-		{ id: 1, name: "Men", href: "#" },
-		{ id: 2, name: "Clothing", href: "#" },
-	],
-	images: [
-		{
-			src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-secondary-product-shot.jpg",
-			alt: "Two each of gray, white, and black shirts laying flat.",
-		},
-		{
-			src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg",
-			alt: "Model wearing plain black basic tee.",
-		},
-		{
-			src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg",
-			alt: "Model wearing plain gray basic tee.",
-		},
-		{
-			src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-featured-product-shot.jpg",
-			alt: "Model wearing plain white basic tee.",
-		},
-	],
-	colors: [
-		{
-			id: "white",
-			name: "White",
-			classes: "bg-white checked:outline-gray-400",
-		},
-		{
-			id: "gray",
-			name: "Gray",
-			classes: "bg-gray-200 checked:outline-gray-400",
-		},
-		{
-			id: "black",
-			name: "Black",
-			classes: "bg-gray-900 checked:outline-gray-900",
-		},
-	],
-	sizes: [
-		{ name: "XXS", inStock: false },
-		{ name: "XS", inStock: true },
-		{ name: "S", inStock: true },
-		{ name: "M", inStock: true },
-		{ name: "L", inStock: true },
-		{ name: "XL", inStock: true },
-		{ name: "2XL", inStock: true },
-		{ name: "3XL", inStock: true },
-	],
-	description:
-		'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
-	highlights: [
-		"Hand cut and sewn locally",
-		"Dyed with our proprietary colors",
-		"Pre-washed & pre-shrunk",
-		"Ultra-soft 100% cotton",
-	],
-	details:
-		'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
-};
-const reviews = { href: "#", average: 4, totalCount: 117 };
+const colors = [
+	{
+		id: "white",
+		name: "White",
+		classes: "bg-white checked:outline-gray-400",
+	},
+	{
+		id: "gray",
+		name: "Gray",
+		classes: "bg-gray-200 checked:outline-gray-400",
+	},
+	{
+		id: "black",
+		name: "Black",
+		classes: "bg-gray-900 checked:outline-gray-900",
+	},
+];
+const sizes = [
+	{ name: "XXS", inStock: false },
+	{ name: "XS", inStock: true },
+	{ name: "S", inStock: true },
+	{ name: "M", inStock: true },
+	{ name: "L", inStock: true },
+	{ name: "XL", inStock: true },
+	{ name: "2XL", inStock: true },
+	{ name: "3XL", inStock: true },
+];
+
+const highlights = [
+	"Hand cut and sewn locally",
+	"Dyed with our proprietary colors",
+	"Pre-washed & pre-shrunk",
+	"Ultra-soft 100% cotton",
+];
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
 }
 
 export default function ProductDetails() {
+	const { id } = useParams();
+	const dispatch = useDispatch();
+	const product = useSelector(selectCurrentProduct);
+
+	const breadcrumbs = [
+		{ id: 1, name: product?.brand ?? "Unbranded", href: "#" },
+		{ id: 2, name: product?.category ?? "general", href: "#" },
+	];
+
+	useEffect(() => {
+		dispatch(fetchProductByIdAsync(id));
+	}, []);
+
 	return (
 		<div className="bg-white">
 			<div className="pt-6">
@@ -79,7 +65,7 @@ export default function ProductDetails() {
 						role="list"
 						className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
 					>
-						{product.breadcrumbs.map((breadcrumb) => (
+						{breadcrumbs.map((breadcrumb) => (
 							<li key={breadcrumb.id}>
 								<div className="flex items-center">
 									<a
@@ -102,13 +88,12 @@ export default function ProductDetails() {
 							</li>
 						))}
 						<li className="text-sm">
-							<a
-								href={product.href}
+							<p
 								aria-current="page"
 								className="font-medium text-gray-500 hover:text-gray-600"
 							>
-								{product.name}
-							</a>
+								{product && product?.title}
+							</p>
 						</li>
 					</ol>
 				</nav>
@@ -116,23 +101,23 @@ export default function ProductDetails() {
 				{/* Image gallery */}
 				<div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-8 lg:px-8">
 					<img
-						alt={product.images[0].alt}
-						src={product.images[0].src}
+						alt={product && product.title}
+						src={product && product.images[0]}
 						className="row-span-2 aspect-3/4 size-full rounded-lg object-cover max-lg:hidden"
 					/>
 					<img
-						alt={product.images[1].alt}
-						src={product.images[1].src}
+						alt={product && product.title}
+						src={product && product.images[0]}
 						className="col-start-2 aspect-3/2 size-full rounded-lg object-cover max-lg:hidden"
 					/>
 					<img
-						alt={product.images[2].alt}
-						src={product.images[2].src}
+						alt={product && product.title}
+						src={product && product.images[0]}
 						className="col-start-2 row-start-2 aspect-3/2 size-full rounded-lg object-cover max-lg:hidden"
 					/>
 					<img
-						alt={product.images[3].alt}
-						src={product.images[3].src}
+						alt={product && product.title}
+						src={product && product.images[0]}
 						className="row-span-2 aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-3/4"
 					/>
 				</div>
@@ -141,7 +126,7 @@ export default function ProductDetails() {
 				<div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
 					<div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
 						<h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-							{product.name}
+							{product && product.title}
 						</h1>
 					</div>
 
@@ -149,7 +134,7 @@ export default function ProductDetails() {
 					<div className="mt-4 lg:row-span-3 lg:mt-0">
 						<h2 className="sr-only">Product information</h2>
 						<p className="text-3xl tracking-tight text-gray-900">
-							{product.price}
+							{product && product.title}
 						</p>
 
 						{/* Reviews */}
@@ -162,7 +147,8 @@ export default function ProductDetails() {
 											key={rating}
 											aria-hidden="true"
 											className={classNames(
-												reviews.average > rating
+												product &&
+													product.rating > rating
 													? "text-gray-900"
 													: "text-gray-200",
 												"size-5 shrink-0"
@@ -171,14 +157,11 @@ export default function ProductDetails() {
 									))}
 								</div>
 								<p className="sr-only">
-									{reviews.average} out of 5 stars
+									{product && product.rating} out of 5 stars
 								</p>
-								<a
-									href={reviews.href}
-									className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
-								>
-									{reviews.totalCount} reviews
-								</a>
+								<p className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
+									{product && product.reviews.length} reviews
+								</p>
 							</div>
 						</div>
 
@@ -194,7 +177,7 @@ export default function ProductDetails() {
 									className="mt-4"
 								>
 									<div className="flex items-center gap-x-3">
-										{product.colors.map((color) => (
+										{colors.map((color) => (
 											<div
 												key={color.id}
 												className="flex rounded-full outline -outline-offset-1 outline-black/10"
@@ -202,8 +185,7 @@ export default function ProductDetails() {
 												<input
 													defaultValue={color.id}
 													defaultChecked={
-														color ===
-														product.colors[0]
+														color === colors[0]
 													}
 													name="color"
 													type="radio"
@@ -238,7 +220,7 @@ export default function ProductDetails() {
 									className="mt-4"
 								>
 									<div className="grid grid-cols-4 gap-3">
-										{product.sizes.map((size) => (
+										{sizes.map((size) => (
 											<label
 												key={size.id}
 												aria-label={size.name}
@@ -247,8 +229,7 @@ export default function ProductDetails() {
 												<input
 													defaultValue={size.id}
 													defaultChecked={
-														size ===
-														product.sizes[2]
+														size === sizes[2]
 													}
 													name="size"
 													type="radio"
@@ -284,7 +265,7 @@ export default function ProductDetails() {
 
 							<div className="space-y-6">
 								<p className="text-base text-gray-900">
-									{product.description}
+									{product && product.description}
 								</p>
 							</div>
 						</div>
@@ -299,7 +280,7 @@ export default function ProductDetails() {
 									role="list"
 									className="list-disc space-y-2 pl-4 text-sm"
 								>
-									{product.highlights.map((highlight) => (
+									{highlights.map((highlight) => (
 										<li
 											key={highlight}
 											className="text-gray-400"
@@ -320,7 +301,7 @@ export default function ProductDetails() {
 
 							<div className="mt-4 space-y-6">
 								<p className="text-sm text-gray-600">
-									{product.details}
+									{product && product.description}
 								</p>
 							</div>
 						</div>

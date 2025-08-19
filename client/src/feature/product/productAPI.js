@@ -31,7 +31,7 @@ export async function fetchAllProductsByFilters(filters, sort, pagination) {
 			query_string += `${item}=${pagination[item]}&`;
 		}
 
-		console.log("QUERY STRING: ", query_string);
+		// console.log("QUERY STRING: ", query_string);
 		// TODO: replace hardcoded server url
 		const response = await fetch(
 			`http://localhost:3000/products/?${query_string}`
@@ -70,6 +70,21 @@ export async function fetchSortingOptions() {
 	try {
 		// TODO: replace hardcoded server url
 		const response = await fetch("http://localhost:3000/sortOptions");
+		if (!response.ok) {
+			throw new Error(`Server error: ${response.status}`);
+		}
+		const data = await response.json();
+		return { data };
+	} catch (error) {
+		console.error("Failed to fetch products:", error);
+		return { data: [], error };
+	}
+}
+
+export async function getProductById(id) {
+	try {
+		// TODO: replace hardcoded server url
+		const response = await fetch(`http://localhost:3000/products/${id}`);
 		if (!response.ok) {
 			throw new Error(`Server error: ${response.status}`);
 		}
