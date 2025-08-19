@@ -22,6 +22,8 @@ import { Link } from "react-router";
 const navigation = [
 	{ name: "Home", href: "/", current: true },
 	{ name: "About", href: "/about", current: false },
+	{ name: "Login", href: "/login", current: false },
+	{ name: "Signup", href: "/sign-up", current: false },
 ];
 
 function classNames(...classes) {
@@ -55,7 +57,7 @@ function Navbar() {
 						<div className="hidden sm:ml-6 sm:block">
 							<div className="flex space-x-4">
 								{navigation.map((item) => (
-									<a
+									<Link
 										key={item.name}
 										href={item.href}
 										aria-current={
@@ -69,7 +71,7 @@ function Navbar() {
 										)}
 									>
 										{item.name}
-									</a>
+									</Link>
 								))}
 							</div>
 						</div>

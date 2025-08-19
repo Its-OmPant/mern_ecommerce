@@ -14,7 +14,11 @@
 			"brand": "essence",
 			"sku": "BEA-ESS-ESS-001",
 			"weight": 4,
-			"dimensions": { "width": 15.14, "height": 13.08, "depth": 22.99 },
+			"dimensions": {
+				"width": 15.14,
+				"height": 13.08,
+				"depth": 22.99
+			},
 			"warrantyInformation": "1 week warranty",
 			"shippingInformation": "Ships in 3-5 business days",
 			"availabilityStatus": "In Stock",
@@ -68,7 +72,11 @@
 			"brand": "glamour-beauty",
 			"sku": "BEA-GLA-EYE-002",
 			"weight": 9,
-			"dimensions": { "width": 9.26, "height": 22.47, "depth": 27.67 },
+			"dimensions": {
+				"width": 9.26,
+				"height": 22.47,
+				"depth": 27.67
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -122,7 +130,11 @@
 			"brand": "velvet-touch",
 			"sku": "BEA-VEL-POW-003",
 			"weight": 8,
-			"dimensions": { "width": 29.27, "height": 27.93, "depth": 20.59 },
+			"dimensions": {
+				"width": 29.27,
+				"height": 27.93,
+				"depth": 20.59
+			},
 			"warrantyInformation": "3 months warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -176,7 +188,11 @@
 			"brand": "chic-cosmetics",
 			"sku": "BEA-CHI-LIP-004",
 			"weight": 1,
-			"dimensions": { "width": 18.11, "height": 28.38, "depth": 22.17 },
+			"dimensions": {
+				"width": 18.11,
+				"height": 28.38,
+				"depth": 22.17
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -230,7 +246,11 @@
 			"brand": "nail-couture",
 			"sku": "BEA-NAI-NAI-005",
 			"weight": 8,
-			"dimensions": { "width": 21.63, "height": 16.48, "depth": 29.84 },
+			"dimensions": {
+				"width": 21.63,
+				"height": 16.48,
+				"depth": 29.84
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -284,7 +304,11 @@
 			"brand": "calvin-klein",
 			"sku": "FRA-CAL-CAL-006",
 			"weight": 7,
-			"dimensions": { "width": 29.36, "height": 27.76, "depth": 20.72 },
+			"dimensions": {
+				"width": 29.36,
+				"height": 27.76,
+				"depth": 20.72
+			},
 			"warrantyInformation": "1 week warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -340,7 +364,11 @@
 			"brand": "chanel",
 			"sku": "FRA-CHA-CHA-007",
 			"weight": 7,
-			"dimensions": { "width": 24.5, "height": 25.7, "depth": 25.98 },
+			"dimensions": {
+				"width": 24.5,
+				"height": 25.7,
+				"depth": 25.98
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -396,7 +424,11 @@
 			"brand": "dior",
 			"sku": "FRA-DIO-DIO-008",
 			"weight": 4,
-			"dimensions": { "width": 27.67, "height": 28.28, "depth": 11.83 },
+			"dimensions": {
+				"width": 27.67,
+				"height": 28.28,
+				"depth": 11.83
+			},
 			"warrantyInformation": "1 week warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -452,7 +484,11 @@
 			"brand": "dolce-gabbana",
 			"sku": "FRA-DOL-DOL-009",
 			"weight": 6,
-			"dimensions": { "width": 27.28, "height": 29.88, "depth": 18.3 },
+			"dimensions": {
+				"width": 27.28,
+				"height": 29.88,
+				"depth": 18.3
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "Low Stock",
@@ -508,7 +544,11 @@
 			"brand": "gucci",
 			"sku": "FRA-GUC-GUC-010",
 			"weight": 7,
-			"dimensions": { "width": 20.92, "height": 21.68, "depth": 11.2 },
+			"dimensions": {
+				"width": 20.92,
+				"height": 21.68,
+				"depth": 11.2
+			},
 			"warrantyInformation": "6 months warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -564,7 +604,11 @@
 			"brand": "annibale-colombo",
 			"sku": "FUR-ANN-ANN-011",
 			"weight": 10,
-			"dimensions": { "width": 28.16, "height": 25.36, "depth": 17.28 },
+			"dimensions": {
+				"width": 28.16,
+				"height": 25.36,
+				"depth": 17.28
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -620,7 +664,11 @@
 			"brand": "annibale-colombo",
 			"sku": "FUR-ANN-ANN-012",
 			"weight": 6,
-			"dimensions": { "width": 12.75, "height": 20.55, "depth": 19.06 },
+			"dimensions": {
+				"width": 12.75,
+				"height": 20.55,
+				"depth": 19.06
+			},
 			"warrantyInformation": "Lifetime warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -676,7 +724,11 @@
 			"brand": "furniture-co",
 			"sku": "FUR-FUR-BED-013",
 			"weight": 2,
-			"dimensions": { "width": 13.47, "height": 24.99, "depth": 27.35 },
+			"dimensions": {
+				"width": 13.47,
+				"height": 24.99,
+				"depth": 27.35
+			},
 			"warrantyInformation": "5 year warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -732,7 +784,11 @@
 			"brand": "knoll",
 			"sku": "FUR-KNO-KNO-014",
 			"weight": 10,
-			"dimensions": { "width": 13.81, "height": 7.5, "depth": 5.62 },
+			"dimensions": {
+				"width": 13.81,
+				"height": 7.5,
+				"depth": 5.62
+			},
 			"warrantyInformation": "2 year warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -788,7 +844,11 @@
 			"brand": "bath-Trends",
 			"sku": "FUR-BAT-WOO-015",
 			"weight": 10,
-			"dimensions": { "width": 7.98, "height": 8.88, "depth": 28.46 },
+			"dimensions": {
+				"width": 7.98,
+				"height": 8.88,
+				"depth": 28.46
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships in 3-5 business days",
 			"availabilityStatus": "Low Stock",
@@ -842,7 +902,11 @@
 			"tags": ["fruits"],
 			"sku": "GRO-BRD-APP-016",
 			"weight": 9,
-			"dimensions": { "width": 13.66, "height": 11.01, "depth": 9.73 },
+			"dimensions": {
+				"width": 13.66,
+				"height": 11.01,
+				"depth": 9.73
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -894,7 +958,11 @@
 			"tags": ["meat"],
 			"sku": "GRO-BRD-BEE-017",
 			"weight": 10,
-			"dimensions": { "width": 18.9, "height": 5.77, "depth": 18.57 },
+			"dimensions": {
+				"width": 18.9,
+				"height": 5.77,
+				"depth": 18.57
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -946,7 +1014,11 @@
 			"tags": ["pet supplies", "cat food"],
 			"sku": "GRO-BRD-FOO-018",
 			"weight": 10,
-			"dimensions": { "width": 18.08, "height": 9.26, "depth": 21.86 },
+			"dimensions": {
+				"width": 18.08,
+				"height": 9.26,
+				"depth": 21.86
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -998,7 +1070,11 @@
 			"tags": ["meat"],
 			"sku": "GRO-BRD-CHI-019",
 			"weight": 1,
-			"dimensions": { "width": 11.03, "height": 22.11, "depth": 16.01 },
+			"dimensions": {
+				"width": 11.03,
+				"height": 22.11,
+				"depth": 16.01
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -1051,7 +1127,11 @@
 			"tags": ["cooking essentials"],
 			"sku": "GRO-BRD-COO-020",
 			"weight": 5,
-			"dimensions": { "width": 19.95, "height": 27.54, "depth": 24.86 },
+			"dimensions": {
+				"width": 19.95,
+				"height": 27.54,
+				"depth": 24.86
+			},
 			"warrantyInformation": "Lifetime warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -1103,7 +1183,11 @@
 			"tags": ["vegetables"],
 			"sku": "GRO-BRD-CUC-021",
 			"weight": 4,
-			"dimensions": { "width": 12.8, "height": 28.38, "depth": 21.34 },
+			"dimensions": {
+				"width": 12.8,
+				"height": 28.38,
+				"depth": 21.34
+			},
 			"warrantyInformation": "2 year warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -1155,7 +1239,11 @@
 			"tags": ["pet supplies", "dog food"],
 			"sku": "GRO-BRD-FOO-022",
 			"weight": 10,
-			"dimensions": { "width": 16.93, "height": 27.15, "depth": 9.29 },
+			"dimensions": {
+				"width": 16.93,
+				"height": 27.15,
+				"depth": 9.29
+			},
 			"warrantyInformation": "No warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -1207,7 +1295,11 @@
 			"tags": ["dairy"],
 			"sku": "GRO-BRD-EGG-023",
 			"weight": 2,
-			"dimensions": { "width": 11.42, "height": 7.44, "depth": 16.95 },
+			"dimensions": {
+				"width": 11.42,
+				"height": 7.44,
+				"depth": 16.95
+			},
 			"warrantyInformation": "1 week warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -1259,7 +1351,11 @@
 			"tags": ["seafood"],
 			"sku": "GRO-BRD-FIS-024",
 			"weight": 6,
-			"dimensions": { "width": 14.95, "height": 26.31, "depth": 11.27 },
+			"dimensions": {
+				"width": 14.95,
+				"height": 26.31,
+				"depth": 11.27
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships in 3-5 business days",
 			"availabilityStatus": "In Stock",
@@ -1311,7 +1407,11 @@
 			"tags": ["vegetables"],
 			"sku": "GRO-BRD-GRE-025",
 			"weight": 2,
-			"dimensions": { "width": 15.33, "height": 26.65, "depth": 14.44 },
+			"dimensions": {
+				"width": 15.33,
+				"height": 26.65,
+				"depth": 14.44
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -1363,7 +1463,11 @@
 			"tags": ["vegetables"],
 			"sku": "GRO-BRD-GRE-026",
 			"weight": 7,
-			"dimensions": { "width": 15.38, "height": 18.12, "depth": 19.92 },
+			"dimensions": {
+				"width": 15.38,
+				"height": 18.12,
+				"depth": 19.92
+			},
 			"warrantyInformation": "2 year warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "Low Stock",
@@ -1415,7 +1519,11 @@
 			"tags": ["condiments"],
 			"sku": "GRO-BRD-HON-027",
 			"weight": 2,
-			"dimensions": { "width": 9.28, "height": 21.72, "depth": 17.74 },
+			"dimensions": {
+				"width": 9.28,
+				"height": 21.72,
+				"depth": 17.74
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -1467,7 +1575,11 @@
 			"tags": ["desserts"],
 			"sku": "GRO-BRD-CRE-028",
 			"weight": 1,
-			"dimensions": { "width": 14.83, "height": 15.07, "depth": 24.2 },
+			"dimensions": {
+				"width": 14.83,
+				"height": 15.07,
+				"depth": 24.2
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -1522,7 +1634,11 @@
 			"tags": ["beverages"],
 			"sku": "GRO-BRD-JUI-029",
 			"weight": 1,
-			"dimensions": { "width": 18.56, "height": 21.46, "depth": 28.02 },
+			"dimensions": {
+				"width": 18.56,
+				"height": 21.46,
+				"depth": 28.02
+			},
 			"warrantyInformation": "6 months warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -1574,7 +1690,11 @@
 			"tags": ["fruits"],
 			"sku": "GRO-BRD-KIW-030",
 			"weight": 5,
-			"dimensions": { "width": 19.4, "height": 18.67, "depth": 17.13 },
+			"dimensions": {
+				"width": 19.4,
+				"height": 18.67,
+				"depth": 17.13
+			},
 			"warrantyInformation": "6 months warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -1626,7 +1746,11 @@
 			"tags": ["fruits"],
 			"sku": "GRO-BRD-LEM-031",
 			"weight": 3,
-			"dimensions": { "width": 23.77, "height": 9.22, "depth": 12.05 },
+			"dimensions": {
+				"width": 23.77,
+				"height": 9.22,
+				"depth": 12.05
+			},
 			"warrantyInformation": "No warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -1678,7 +1802,11 @@
 			"tags": ["dairy"],
 			"sku": "GRO-BRD-MIL-032",
 			"weight": 5,
-			"dimensions": { "width": 12.92, "height": 15.76, "depth": 11.29 },
+			"dimensions": {
+				"width": 12.92,
+				"height": 15.76,
+				"depth": 11.29
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -1730,7 +1858,11 @@
 			"tags": ["fruits"],
 			"sku": "GRO-BRD-MUL-033",
 			"weight": 5,
-			"dimensions": { "width": 12.8, "height": 18.54, "depth": 6.31 },
+			"dimensions": {
+				"width": 12.8,
+				"height": 18.54,
+				"depth": 6.31
+			},
 			"warrantyInformation": "2 year warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -1782,7 +1914,11 @@
 			"tags": ["beverages", "coffee"],
 			"sku": "GRO-BRD-NES-034",
 			"weight": 6,
-			"dimensions": { "width": 20.54, "height": 29.49, "depth": 29.2 },
+			"dimensions": {
+				"width": 20.54,
+				"height": 29.49,
+				"depth": 29.2
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -1834,7 +1970,11 @@
 			"tags": ["vegetables"],
 			"sku": "GRO-BRD-POT-035",
 			"weight": 9,
-			"dimensions": { "width": 22.65, "height": 9.83, "depth": 21.75 },
+			"dimensions": {
+				"width": 22.65,
+				"height": 9.83,
+				"depth": 21.75
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships in 3-5 business days",
 			"availabilityStatus": "In Stock",
@@ -1886,7 +2026,11 @@
 			"tags": ["health supplements"],
 			"sku": "GRO-BRD-PRO-036",
 			"weight": 9,
-			"dimensions": { "width": 9.01, "height": 12.53, "depth": 22.35 },
+			"dimensions": {
+				"width": 9.01,
+				"height": 12.53,
+				"depth": 22.35
+			},
 			"warrantyInformation": "1 week warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -1938,7 +2082,11 @@
 			"tags": ["vegetables"],
 			"sku": "GRO-BRD-ONI-037",
 			"weight": 9,
-			"dimensions": { "width": 16.01, "height": 24.96, "depth": 12.74 },
+			"dimensions": {
+				"width": 16.01,
+				"height": 24.96,
+				"depth": 12.74
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships in 3-5 business days",
 			"availabilityStatus": "In Stock",
@@ -1990,7 +2138,11 @@
 			"tags": ["grains"],
 			"sku": "GRO-BRD-RIC-038",
 			"weight": 5,
-			"dimensions": { "width": 17.21, "height": 9.88, "depth": 17.16 },
+			"dimensions": {
+				"width": 17.21,
+				"height": 9.88,
+				"depth": 17.16
+			},
 			"warrantyInformation": "6 months warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -2042,7 +2194,11 @@
 			"tags": ["beverages"],
 			"sku": "GRO-BRD-SOF-039",
 			"weight": 9,
-			"dimensions": { "width": 19.75, "height": 6.79, "depth": 9.33 },
+			"dimensions": {
+				"width": 19.75,
+				"height": 6.79,
+				"depth": 9.33
+			},
 			"warrantyInformation": "6 months warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -2094,7 +2250,11 @@
 			"tags": ["fruits"],
 			"sku": "GRO-BRD-STR-040",
 			"weight": 1,
-			"dimensions": { "width": 28.18, "height": 21.25, "depth": 28.54 },
+			"dimensions": {
+				"width": 28.18,
+				"height": 21.25,
+				"depth": 28.54
+			},
 			"warrantyInformation": "1 week warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -2146,7 +2306,11 @@
 			"tags": ["household essentials"],
 			"sku": "GRO-BRD-TIS-041",
 			"weight": 1,
-			"dimensions": { "width": 18.75, "height": 17.58, "depth": 12.43 },
+			"dimensions": {
+				"width": 18.75,
+				"height": 17.58,
+				"depth": 12.43
+			},
 			"warrantyInformation": "No warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -2199,7 +2363,11 @@
 			"tags": ["beverages"],
 			"sku": "GRO-BRD-WAT-042",
 			"weight": 4,
-			"dimensions": { "width": 18.43, "height": 7.4, "depth": 17.79 },
+			"dimensions": {
+				"width": 18.43,
+				"height": 7.4,
+				"depth": 17.79
+			},
 			"warrantyInformation": "3 months warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -2251,7 +2419,11 @@
 			"tags": ["home decor", "swing"],
 			"sku": "HOM-BRD-DEC-043",
 			"weight": 4,
-			"dimensions": { "width": 23.84, "height": 15.19, "depth": 26.05 },
+			"dimensions": {
+				"width": 23.84,
+				"height": 15.19,
+				"depth": 26.05
+			},
 			"warrantyInformation": "1 week warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -2305,7 +2477,11 @@
 			"tags": ["home decor", "photo frame"],
 			"sku": "HOM-BRD-FAM-044",
 			"weight": 1,
-			"dimensions": { "width": 17.27, "height": 14.81, "depth": 29.11 },
+			"dimensions": {
+				"width": 17.27,
+				"height": 14.81,
+				"depth": 29.11
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -2357,7 +2533,11 @@
 			"tags": ["home decor", "artificial plants"],
 			"sku": "HOM-BRD-HOU-045",
 			"weight": 8,
-			"dimensions": { "width": 8.55, "height": 14.62, "depth": 17.25 },
+			"dimensions": {
+				"width": 8.55,
+				"height": 14.62,
+				"depth": 17.25
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -2411,7 +2591,11 @@
 			"tags": ["home decor", "plant accessories"],
 			"sku": "HOM-BRD-PLA-046",
 			"weight": 9,
-			"dimensions": { "width": 9.83, "height": 20.28, "depth": 13.49 },
+			"dimensions": {
+				"width": 9.83,
+				"height": 20.28,
+				"depth": 13.49
+			},
 			"warrantyInformation": "Lifetime warranty",
 			"shippingInformation": "Ships in 3-5 business days",
 			"availabilityStatus": "In Stock",
@@ -2466,7 +2650,11 @@
 			"tags": ["home decor", "lighting"],
 			"sku": "HOM-BRD-TAB-047",
 			"weight": 4,
-			"dimensions": { "width": 8.98, "height": 13.41, "depth": 5.65 },
+			"dimensions": {
+				"width": 8.98,
+				"height": 13.41,
+				"depth": 5.65
+			},
 			"warrantyInformation": "3 months warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -2518,7 +2706,11 @@
 			"tags": ["kitchen tools", "utensils"],
 			"sku": "KIT-BRD-BAM-048",
 			"weight": 3,
-			"dimensions": { "width": 21.32, "height": 23.03, "depth": 25.94 },
+			"dimensions": {
+				"width": 21.32,
+				"height": 23.03,
+				"depth": 25.94
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -2570,7 +2762,11 @@
 			"tags": ["drinkware", "cups"],
 			"sku": "KIT-BRD-BLA-049",
 			"weight": 7,
-			"dimensions": { "width": 5.88, "height": 5.11, "depth": 10.03 },
+			"dimensions": {
+				"width": 5.88,
+				"height": 5.11,
+				"depth": 10.03
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -2623,7 +2819,11 @@
 			"tags": ["kitchen tools", "utensils"],
 			"sku": "KIT-BRD-BLA-050",
 			"weight": 1,
-			"dimensions": { "width": 13.03, "height": 5.99, "depth": 20.64 },
+			"dimensions": {
+				"width": 13.03,
+				"height": 5.99,
+				"depth": 20.64
+			},
 			"warrantyInformation": "3 months warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -2675,7 +2875,11 @@
 			"tags": ["kitchen appliances", "blenders"],
 			"sku": "KIT-BRD-BOX-051",
 			"weight": 1,
-			"dimensions": { "width": 9.05, "height": 19.45, "depth": 17.59 },
+			"dimensions": {
+				"width": 9.05,
+				"height": 19.45,
+				"depth": 17.59
+			},
 			"warrantyInformation": "5 year warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -2730,7 +2934,11 @@
 			"tags": ["cookware", "woks"],
 			"sku": "KIT-BRD-CAR-052",
 			"weight": 2,
-			"dimensions": { "width": 27.69, "height": 7.54, "depth": 10.11 },
+			"dimensions": {
+				"width": 27.69,
+				"height": 7.54,
+				"depth": 10.11
+			},
 			"warrantyInformation": "2 year warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -2782,7 +2990,11 @@
 			"tags": ["kitchen tools", "cutting boards"],
 			"sku": "KIT-BRD-CHO-053",
 			"weight": 2,
-			"dimensions": { "width": 15.6, "height": 6.93, "depth": 8.51 },
+			"dimensions": {
+				"width": 15.6,
+				"height": 6.93,
+				"depth": 8.51
+			},
 			"warrantyInformation": "3 months warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -2834,7 +3046,11 @@
 			"tags": ["kitchen tools", "juicers"],
 			"sku": "KIT-BRD-CIT-054",
 			"weight": 2,
-			"dimensions": { "width": 17.16, "height": 26.8, "depth": 16.29 },
+			"dimensions": {
+				"width": 17.16,
+				"height": 26.8,
+				"depth": 16.29
+			},
 			"warrantyInformation": "2 year warranty",
 			"shippingInformation": "Ships in 3-5 business days",
 			"availabilityStatus": "In Stock",
@@ -2886,7 +3102,11 @@
 			"tags": ["kitchen tools", "slicers"],
 			"sku": "KIT-BRD-SLI-055",
 			"weight": 2,
-			"dimensions": { "width": 10.81, "height": 19.15, "depth": 13.18 },
+			"dimensions": {
+				"width": 10.81,
+				"height": 19.15,
+				"depth": 13.18
+			},
 			"warrantyInformation": "1 week warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -2938,7 +3158,11 @@
 			"tags": ["kitchen appliances", "cooktops"],
 			"sku": "KIT-BRD-ELE-056",
 			"weight": 5,
-			"dimensions": { "width": 24.17, "height": 22.55, "depth": 27.49 },
+			"dimensions": {
+				"width": 24.17,
+				"height": 22.55,
+				"depth": 27.49
+			},
 			"warrantyInformation": "2 year warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -2993,7 +3217,11 @@
 			"tags": ["kitchen tools", "strainers"],
 			"sku": "KIT-BRD-FIN-057",
 			"weight": 9,
-			"dimensions": { "width": 18.02, "height": 13.23, "depth": 15.92 },
+			"dimensions": {
+				"width": 18.02,
+				"height": 13.23,
+				"depth": 15.92
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -3045,7 +3273,11 @@
 			"tags": ["kitchen tools", "utensils"],
 			"sku": "KIT-BRD-FOR-058",
 			"weight": 9,
-			"dimensions": { "width": 12.3, "height": 25.91, "depth": 22.57 },
+			"dimensions": {
+				"width": 12.3,
+				"height": 25.91,
+				"depth": 22.57
+			},
 			"warrantyInformation": "No warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -3097,7 +3329,11 @@
 			"tags": ["drinkware", "glasses"],
 			"sku": "KIT-BRD-GLA-059",
 			"weight": 10,
-			"dimensions": { "width": 20.23, "height": 24.56, "depth": 26.97 },
+			"dimensions": {
+				"width": 20.23,
+				"height": 24.56,
+				"depth": 26.97
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -3149,7 +3385,11 @@
 			"tags": ["kitchen tools", "graters"],
 			"sku": "KIT-BRD-GRA-060",
 			"weight": 3,
-			"dimensions": { "width": 6.32, "height": 23.11, "depth": 24.64 },
+			"dimensions": {
+				"width": 6.32,
+				"height": 23.11,
+				"depth": 24.64
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -3201,7 +3441,11 @@
 			"tags": ["kitchen appliances", "blenders"],
 			"sku": "KIT-BRD-HAN-061",
 			"weight": 5,
-			"dimensions": { "width": 27.31, "height": 21, "depth": 24.27 },
+			"dimensions": {
+				"width": 27.31,
+				"height": 21,
+				"depth": 24.27
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -3253,7 +3497,11 @@
 			"tags": ["kitchen tools", "ice cube trays"],
 			"sku": "KIT-BRD-CUB-062",
 			"weight": 3,
-			"dimensions": { "width": 26.67, "height": 18.14, "depth": 5.31 },
+			"dimensions": {
+				"width": 26.67,
+				"height": 18.14,
+				"depth": 5.31
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -3305,7 +3553,11 @@
 			"tags": ["kitchen tools", "strainers"],
 			"sku": "KIT-BRD-KIT-063",
 			"weight": 5,
-			"dimensions": { "width": 20.68, "height": 6.5, "depth": 7.86 },
+			"dimensions": {
+				"width": 20.68,
+				"height": 6.5,
+				"depth": 7.86
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -3357,7 +3609,11 @@
 			"tags": ["kitchen tools", "cutlery"],
 			"sku": "KIT-BRD-KNI-064",
 			"weight": 3,
-			"dimensions": { "width": 25.19, "height": 18.52, "depth": 20.5 },
+			"dimensions": {
+				"width": 25.19,
+				"height": 18.52,
+				"depth": 20.5
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "Low Stock",
@@ -3409,7 +3665,11 @@
 			"tags": ["kitchen tools", "storage"],
 			"sku": "KIT-BRD-LUN-065",
 			"weight": 9,
-			"dimensions": { "width": 12.45, "height": 19.08, "depth": 8.24 },
+			"dimensions": {
+				"width": 12.45,
+				"height": 19.08,
+				"depth": 8.24
+			},
 			"warrantyInformation": "5 year warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -3461,7 +3721,11 @@
 			"tags": ["kitchen appliances", "microwaves"],
 			"sku": "KIT-BRD-MIC-066",
 			"weight": 9,
-			"dimensions": { "width": 16.31, "height": 27.45, "depth": 13.05 },
+			"dimensions": {
+				"width": 16.31,
+				"height": 27.45,
+				"depth": 13.05
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -3516,7 +3780,11 @@
 			"tags": ["kitchen tools", "organization"],
 			"sku": "KIT-BRD-TRE-067",
 			"weight": 3,
-			"dimensions": { "width": 18.99, "height": 27.14, "depth": 27.29 },
+			"dimensions": {
+				"width": 18.99,
+				"height": 27.14,
+				"depth": 27.29
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -3569,7 +3837,11 @@
 			"tags": ["cookware", "pans"],
 			"sku": "KIT-BRD-PRD-068",
 			"weight": 8,
-			"dimensions": { "width": 17.14, "height": 21.7, "depth": 25.75 },
+			"dimensions": {
+				"width": 17.14,
+				"height": 21.7,
+				"depth": 25.75
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 3-5 business days",
 			"availabilityStatus": "In Stock",
@@ -3621,7 +3893,11 @@
 			"tags": ["dinnerware", "plates"],
 			"sku": "KIT-BRD-PLA-069",
 			"weight": 4,
-			"dimensions": { "width": 16.46, "height": 5.39, "depth": 13.15 },
+			"dimensions": {
+				"width": 16.46,
+				"height": 5.39,
+				"depth": 13.15
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -3673,7 +3949,11 @@
 			"tags": ["kitchen tools", "tongs"],
 			"sku": "KIT-BRD-TON-070",
 			"weight": 7,
-			"dimensions": { "width": 22.86, "height": 26.2, "depth": 17 },
+			"dimensions": {
+				"width": 22.86,
+				"height": 26.2,
+				"depth": 17
+			},
 			"warrantyInformation": "No warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -3725,7 +4005,11 @@
 			"tags": ["cookware", "pots"],
 			"sku": "KIT-BRD-SIL-071",
 			"weight": 7,
-			"dimensions": { "width": 21.03, "height": 11.7, "depth": 6.69 },
+			"dimensions": {
+				"width": 21.03,
+				"height": 11.7,
+				"depth": 6.69
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -3777,7 +4061,11 @@
 			"tags": ["kitchen tools", "turners"],
 			"sku": "KIT-BRD-SLO-072",
 			"weight": 8,
-			"dimensions": { "width": 14.41, "height": 27.15, "depth": 14.76 },
+			"dimensions": {
+				"width": 14.41,
+				"height": 27.15,
+				"depth": 14.76
+			},
 			"warrantyInformation": "Lifetime warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -3829,7 +4117,11 @@
 			"tags": ["kitchen tools", "organization"],
 			"sku": "KIT-BRD-SPI-073",
 			"weight": 7,
-			"dimensions": { "width": 28.06, "height": 22.43, "depth": 26.34 },
+			"dimensions": {
+				"width": 28.06,
+				"height": 22.43,
+				"depth": 26.34
+			},
 			"warrantyInformation": "1 week warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -3881,7 +4173,11 @@
 			"tags": ["kitchen tools", "utensils"],
 			"sku": "KIT-BRD-SPO-074",
 			"weight": 6,
-			"dimensions": { "width": 8.49, "height": 26.04, "depth": 27.78 },
+			"dimensions": {
+				"width": 8.49,
+				"height": 26.04,
+				"depth": 27.78
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -3933,7 +4229,11 @@
 			"tags": ["serveware", "trays"],
 			"sku": "KIT-BRD-TRA-075",
 			"weight": 10,
-			"dimensions": { "width": 12.7, "height": 7.52, "depth": 9.72 },
+			"dimensions": {
+				"width": 12.7,
+				"height": 7.52,
+				"depth": 9.72
+			},
 			"warrantyInformation": "5 year warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -3985,7 +4285,11 @@
 			"tags": ["kitchen tools", "baking"],
 			"sku": "KIT-BRD-WOO-076",
 			"weight": 7,
-			"dimensions": { "width": 5.92, "height": 10.87, "depth": 19.55 },
+			"dimensions": {
+				"width": 5.92,
+				"height": 10.87,
+				"depth": 19.55
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -4037,7 +4341,11 @@
 			"tags": ["kitchen tools", "peelers"],
 			"sku": "KIT-BRD-YEL-077",
 			"weight": 7,
-			"dimensions": { "width": 9.7, "height": 6.43, "depth": 17.93 },
+			"dimensions": {
+				"width": 9.7,
+				"height": 6.43,
+				"depth": 17.93
+			},
 			"warrantyInformation": "1 month warranty",
 			"shippingInformation": "Ships in 3-5 business days",
 			"availabilityStatus": "In Stock",
@@ -4091,7 +4399,11 @@
 			"brand": "apple",
 			"sku": "LAP-APP-APP-078",
 			"weight": 9,
-			"dimensions": { "width": 20.03, "height": 9.54, "depth": 14.82 },
+			"dimensions": {
+				"width": 20.03,
+				"height": 9.54,
+				"depth": 14.82
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -4147,7 +4459,11 @@
 			"brand": "asus",
 			"sku": "LAP-ASU-ASU-079",
 			"weight": 9,
-			"dimensions": { "width": 16.6, "height": 11.49, "depth": 10.89 },
+			"dimensions": {
+				"width": 16.6,
+				"height": 11.49,
+				"depth": 10.89
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -4203,7 +4519,11 @@
 			"brand": "huawei",
 			"sku": "LAP-HUA-HUA-080",
 			"weight": 9,
-			"dimensions": { "width": 18.21, "height": 22.83, "depth": 17.26 },
+			"dimensions": {
+				"width": 18.21,
+				"height": 22.83,
+				"depth": 17.26
+			},
 			"warrantyInformation": "No warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -4259,7 +4579,11 @@
 			"brand": "lenovo",
 			"sku": "LAP-LEN-LEN-081",
 			"weight": 9,
-			"dimensions": { "width": 20.84, "height": 22.68, "depth": 17.39 },
+			"dimensions": {
+				"width": 20.84,
+				"height": 22.68,
+				"depth": 17.39
+			},
 			"warrantyInformation": "6 months warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -4315,7 +4639,11 @@
 			"brand": "dell",
 			"sku": "LAP-DEL-DEL-082",
 			"weight": 2,
-			"dimensions": { "width": 13.76, "height": 29, "depth": 21.42 },
+			"dimensions": {
+				"width": 13.76,
+				"height": 29,
+				"depth": 21.42
+			},
 			"warrantyInformation": "2 year warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -4371,7 +4699,11 @@
 			"brand": "fashion-trends",
 			"sku": "MEN-FAS-BLU-083",
 			"weight": 4,
-			"dimensions": { "width": 27.49, "height": 23.73, "depth": 28.61 },
+			"dimensions": {
+				"width": 27.49,
+				"height": 23.73,
+				"depth": 28.61
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships in 3-5 business days",
 			"availabilityStatus": "In Stock",
@@ -4428,7 +4760,11 @@
 			"brand": "gigabyte",
 			"sku": "MEN-GIG-GIG-084",
 			"weight": 4,
-			"dimensions": { "width": 22.31, "height": 26.47, "depth": 13.27 },
+			"dimensions": {
+				"width": 22.31,
+				"height": 26.47,
+				"depth": 13.27
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -4485,7 +4821,11 @@
 			"brand": "classic-wear",
 			"sku": "MEN-CLA-PLA-085",
 			"weight": 3,
-			"dimensions": { "width": 9.34, "height": 5.97, "depth": 10.85 },
+			"dimensions": {
+				"width": 9.34,
+				"height": 5.97,
+				"depth": 10.85
+			},
 			"warrantyInformation": "1 week warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -4542,7 +4882,11 @@
 			"brand": "casual-comfort",
 			"sku": "MEN-CAS-SHO-086",
 			"weight": 2,
-			"dimensions": { "width": 5.02, "height": 16.57, "depth": 9.6 },
+			"dimensions": {
+				"width": 5.02,
+				"height": 16.57,
+				"depth": 9.6
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "Low Stock",
@@ -4599,7 +4943,11 @@
 			"brand": "urban-chic",
 			"sku": "MEN-URB-CHE-087",
 			"weight": 10,
-			"dimensions": { "width": 23.48, "height": 7.03, "depth": 27.33 },
+			"dimensions": {
+				"width": 23.48,
+				"height": 7.03,
+				"depth": 27.33
+			},
 			"warrantyInformation": "No warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -4656,7 +5004,11 @@
 			"brand": "nike",
 			"sku": "MEN-NIK-NIK-088",
 			"weight": 3,
-			"dimensions": { "width": 17.44, "height": 9.52, "depth": 27 },
+			"dimensions": {
+				"width": 17.44,
+				"height": 9.52,
+				"depth": 27
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -4713,7 +5065,11 @@
 			"brand": "nike",
 			"sku": "MEN-NIK-NIK-089",
 			"weight": 9,
-			"dimensions": { "width": 11.75, "height": 26.65, "depth": 19.6 },
+			"dimensions": {
+				"width": 11.75,
+				"height": 26.65,
+				"depth": 19.6
+			},
 			"warrantyInformation": "6 months warranty",
 			"shippingInformation": "Ships in 2 weeks",
 			"availabilityStatus": "In Stock",
@@ -4770,7 +5126,11 @@
 			"brand": "puma",
 			"sku": "MEN-PUM-PUM-090",
 			"weight": 6,
-			"dimensions": { "width": 17.45, "height": 15.58, "depth": 23.13 },
+			"dimensions": {
+				"width": 17.45,
+				"height": 15.58,
+				"depth": 23.13
+			},
 			"warrantyInformation": "5 year warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -4827,7 +5187,11 @@
 			"brand": "off-white",
 			"sku": "MEN-OFF-SPO-091",
 			"weight": 7,
-			"dimensions": { "width": 14.37, "height": 23.44, "depth": 12.84 },
+			"dimensions": {
+				"width": 14.37,
+				"height": 23.44,
+				"depth": 12.84
+			},
 			"warrantyInformation": "1 week warranty",
 			"shippingInformation": "Ships in 3-5 business days",
 			"availabilityStatus": "In Stock",
@@ -4884,7 +5248,11 @@
 			"brand": "off-white",
 			"sku": "MEN-OFF-SPO-092",
 			"weight": 9,
-			"dimensions": { "width": 21.43, "height": 9.86, "depth": 28.5 },
+			"dimensions": {
+				"width": 21.43,
+				"height": 9.86,
+				"depth": 28.5
+			},
 			"warrantyInformation": "3 months warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -4941,7 +5309,11 @@
 			"brand": "fashion-timepieces",
 			"sku": "MEN-FAS-BRO-093",
 			"weight": 10,
-			"dimensions": { "width": 16.65, "height": 6.15, "depth": 20.18 },
+			"dimensions": {
+				"width": 16.65,
+				"height": 6.15,
+				"depth": 20.18
+			},
 			"warrantyInformation": "1 year warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -4997,7 +5369,11 @@
 			"brand": "longines",
 			"sku": "MEN-LON-LON-094",
 			"weight": 4,
-			"dimensions": { "width": 15.39, "height": 10.06, "depth": 20.32 },
+			"dimensions": {
+				"width": 15.39,
+				"height": 10.06,
+				"depth": 20.32
+			},
 			"warrantyInformation": "1 week warranty",
 			"shippingInformation": "Ships in 1-2 business days",
 			"availabilityStatus": "In Stock",
@@ -5053,7 +5429,11 @@
 			"brand": "rolex",
 			"sku": "MEN-ROL-ROL-095",
 			"weight": 2,
-			"dimensions": { "width": 13.46, "height": 26.1, "depth": 17.9 },
+			"dimensions": {
+				"width": 13.46,
+				"height": 26.1,
+				"depth": 17.9
+			},
 			"warrantyInformation": "3 months warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -5109,7 +5489,11 @@
 			"brand": "rolex",
 			"sku": "MEN-ROL-ROL-096",
 			"weight": 2,
-			"dimensions": { "width": 26.06, "height": 25.19, "depth": 13.17 },
+			"dimensions": {
+				"width": 26.06,
+				"height": 25.19,
+				"depth": 13.17
+			},
 			"warrantyInformation": "6 months warranty",
 			"shippingInformation": "Ships overnight",
 			"availabilityStatus": "In Stock",
@@ -5165,7 +5549,11 @@
 			"brand": "rolex",
 			"sku": "MEN-ROL-ROL-097",
 			"weight": 4,
-			"dimensions": { "width": 23.11, "height": 19.97, "depth": 27.04 },
+			"dimensions": {
+				"width": 23.11,
+				"height": 19.97,
+				"depth": 27.04
+			},
 			"warrantyInformation": "2 year warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -5221,7 +5609,11 @@
 			"brand": "rolex",
 			"sku": "MEN-ROL-ROL-098",
 			"weight": 4,
-			"dimensions": { "width": 17.69, "height": 12.48, "depth": 8.75 },
+			"dimensions": {
+				"width": 17.69,
+				"height": 12.48,
+				"depth": 8.75
+			},
 			"warrantyInformation": "5 year warranty",
 			"shippingInformation": "Ships in 1 month",
 			"availabilityStatus": "In Stock",
@@ -5277,7 +5669,11 @@
 			"brand": "amazon",
 			"sku": "MOB-AMA-AMA-099",
 			"weight": 5,
-			"dimensions": { "width": 12.68, "height": 15.24, "depth": 27.46 },
+			"dimensions": {
+				"width": 12.68,
+				"height": 15.24,
+				"depth": 27.46
+			},
 			"warrantyInformation": "6 months warranty",
 			"shippingInformation": "Ships in 1 week",
 			"availabilityStatus": "In Stock",
@@ -5332,7 +5728,11 @@
 			"brand": "apple",
 			"sku": "MOB-APP-APP-100",
 			"weight": 4,
-			"dimensions": { "width": 25.79, "height": 18.38, "depth": 11.53 },
+			"dimensions": {
+				"width": 25.79,
+				"height": 18.38,
+				"depth": 11.53
+			},
 			"warrantyInformation": "3 year warranty",
 			"shippingInformation": "Ships in 3-5 business days",
 			"availabilityStatus": "In Stock",
@@ -5619,6 +6019,18 @@
 			"name": "Price: High to Low",
 			"_sort": "-price",
 			"current": false
+		}
+	],
+	"users": [
+		{
+			"id": "7baf",
+			"email": "ompant992@gmail.com",
+			"password": "Qwerty123"
+		},
+		{
+			"id": "3476",
+			"email": "Deep@hello.ai",
+			"password": "Aa123456"
 		}
 	]
 }
