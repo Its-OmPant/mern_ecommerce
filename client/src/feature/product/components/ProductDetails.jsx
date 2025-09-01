@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { ShoppingCartIcon, StarIcon } from "@heroicons/react/20/solid";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { fetchProductByIdAsync, selectCurrentProduct } from "../productSlice";
+import { addToCartAsync, selectCartItems } from "../../cart/cartSlice";
+import { selectCurrentUser } from "../../auth/authSlice";
 
 const colors = [
 	{
@@ -44,18 +46,47 @@ function classNames(...classes) {
 }
 
 export default function ProductDetails() {
+	const [isAddedToCart, setIsAddedToCart] = useState(false);
+	const cartItems = useSelector(selectCartItems);
 	const { id } = useParams();
 	const dispatch = useDispatch();
 	const product = useSelector(selectCurrentProduct);
+	const user = useSelector(selectCurrentUser);
+	const navigator = useNavigate();
 
 	const breadcrumbs = [
 		{ id: 1, name: product?.brand ?? "Unbranded", href: "#" },
 		{ id: 2, name: product?.category ?? "general", href: "#" },
 	];
 
+	function handleAddToCart(e) {
+		e.preventDefault();
+		if (!isAddedToCart) {
+			let cart_product = {
+				...product,
+				product_id: product.id,
+				user_id: user.id,
+				quantity: 1,
+			};
+			delete cart_product.id;
+			dispatch(addToCartAsync(cart_product));
+			setIsAddedToCart(true);
+			alert("Item Added To Cart");
+		} else {
+			navigator("/cart");
+		}
+	}
+
+	useEffect(() => {
+		const isAdded = cartItems.find((i) => i.product_id == id);
+		if (isAdded) {
+			setIsAddedToCart(true);
+		}
+	}, []);
+
 	useEffect(() => {
 		dispatch(fetchProductByIdAsync(id));
-	}, []);
+	}, [dispatch, id]);
 
 	return (
 		<div className="bg-white">
@@ -246,14 +277,26 @@ export default function ProductDetails() {
 							</div>
 
 							<button
-								type="submit"
+								onClick={handleAddToCart}
 								className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
 							>
-								Add to Cart{" "}
-								<ShoppingCartIcon
-									aria-hidden="true"
-									className="size-4 relative mx-3"
-								/>
+								{!isAddedToCart ? (
+									<>
+										Add To Cart
+										<ShoppingCartIcon
+											aria-hidden="true"
+											className="size-4 relative mx-3"
+										/>
+									</>
+								) : (
+									<>
+										Already In Cart
+										<ShoppingCartIcon
+											aria-hidden="true"
+											className="size-4 relative mx-3"
+										/>
+									</>
+								)}
 							</button>
 						</form>
 					</div>

@@ -12,16 +12,17 @@ import {
 
 import {
 	Bars3Icon,
-	BellIcon,
 	ShoppingCartIcon,
 	XMarkIcon,
 } from "@heroicons/react/24/outline";
 
 import { Link } from "react-router";
+import { useSelector } from "react-redux";
+import { selectCartItems } from "../cart/cartSlice";
 
 const navigation = [
-	{ name: "Home", href: "/", current: true },
-	{ name: "About", href: "/about", current: false },
+	{ name: "Home", to: "/", current: true },
+	{ name: "About", to: "/about", current: false },
 	{ name: "Login", href: "/login", current: false },
 	{ name: "Signup", href: "/sign-up", current: false },
 ];
@@ -31,6 +32,8 @@ function classNames(...classes) {
 }
 
 function Navbar() {
+	const cartItems = useSelector(selectCartItems);
+
 	return (
 		<Disclosure
 			as="nav"
@@ -59,7 +62,7 @@ function Navbar() {
 								{navigation.map((item) => (
 									<Link
 										key={item.name}
-										href={item.href}
+										to={item.to}
 										aria-current={
 											item.current ? "page" : undefined
 										}
@@ -84,9 +87,11 @@ function Navbar() {
 							>
 								<span className="absolute -inset-1.5" />
 								<div className="relative">
-									<span className="absolute -top-3 left-4 inline-flex items-center rounded-md bg-yellow-400/10 px-2 py-1 text-xs font-medium text-yellow-400 inset-ring inset-ring-red-400/20">
-										3
-									</span>
+									{cartItems?.length > 0 && (
+										<span className="absolute -top-3 left-4 inline-flex items-center rounded-md bg-yellow-400/10 px-2 py-1 text-xs font-medium text-yellow-400 inset-ring inset-ring-red-400/20">
+											{cartItems.length}
+										</span>
+									)}
 									<ShoppingCartIcon
 										aria-hidden="true"
 										className="size-6 relative"

@@ -12,6 +12,10 @@ import {
 	CheckoutPage,
 	ProductDetailsPage,
 } from "./Pages";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCartItemsAsync } from "./feature/cart/cartSlice";
+import { useEffect } from "react";
+import { selectCurrentUser } from "./feature/auth/authSlice";
 
 const router = createBrowserRouter([
 	{
@@ -48,6 +52,14 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+	const user = useSelector(selectCurrentUser);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		if (user) {
+			dispatch(fetchCartItemsAsync(user.id));
+		}
+	}, [dispatch, user]);
 	return <RouterProvider router={router} />;
 }
 

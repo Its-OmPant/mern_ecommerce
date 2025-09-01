@@ -52,5 +52,6 @@ export const checkUser = async (credentials) => {
 			"Something Went Wrong while user login \nOriginal Error: ",
 			error
 		);
+		throw new Error("Something Went Wrong");
 	}
 };
