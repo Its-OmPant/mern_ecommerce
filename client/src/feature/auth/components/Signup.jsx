@@ -15,7 +15,11 @@ function Signup() {
 
 	function handleFormSubmission(data) {
 		dispatch(
-			createUserAsync({ email: data.email, password: data.password })
+			createUserAsync({
+				email: data.email,
+				password: data.password,
+				addresses: [],
+			})
 		);
 		alert("User Registration Successful");
 		reset();
