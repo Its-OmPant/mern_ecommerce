@@ -25,7 +25,7 @@ export const addToCart = async (item) => {
 export const getUserCartItems = async (userId) => {
 	try {
 		const response = await fetch(
-			`http://localhost:3000/cart/?user=${userId}`
+			`http://localhost:3000/cart/?user_id=${userId}`
 		);
 		if (!response.ok) {
 			throw new Error(
@@ -39,17 +39,14 @@ export const getUserCartItems = async (userId) => {
 	}
 };
 
-export const removeItemFromCart = async (productId) => {
+export const removeItemFromCart = async (id) => {
 	try {
-		const response = await fetch(
-			`http://localhost:3000/cart/${productId}`,
-			{
-				method: "DELETE",
-				headers: {
-					"content-type": "application/json",
-				},
-			}
-		);
+		const response = await fetch(`http://localhost:3000/cart/${id}`, {
+			method: "DELETE",
+			headers: {
+				"content-type": "application/json",
+			},
+		});
 		if (!response.ok) {
 			throw new Error(
 				`Server Error: ${response.statusText} Code: ${response.status}`
@@ -81,4 +78,15 @@ export const updateCart = async (item) => {
 	} catch (e) {
 		console.log("Error while Updating Cart Item: ", e);
 	}
+};
+
+export const clearCart = async (userID) => {
+	const allItems = await getUserCartItems(userID);
+	console.log("Clear Cart Called");
+	console.log("Items to remove: ", allItems);
+	for (let item of allItems) {
+		await removeItemFromCart(item.id);
+		console.log("Removing Item");
+	}
+	return userID;
 };

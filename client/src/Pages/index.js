@@ -6,6 +6,7 @@ import ProductsPage from "./ProductsPage";
 import NotFoundPage from "./NotFoundPage";
 import CheckoutPage from "./CheckoutPage";
 import ProductDetailsPage from "./ProductDetailsPage";
+import OrderSuccessPage from "./OrderSuccessPage";
 
 export {
 	HomePage,
@@ -16,4 +17,5 @@ export {
 	NotFoundPage,
 	CheckoutPage,
 	ProductDetailsPage,
+	OrderSuccessPage,
 };

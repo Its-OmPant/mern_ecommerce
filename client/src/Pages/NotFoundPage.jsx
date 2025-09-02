@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 export default function NotFoundPage() {
 	return (
 		<main className="flex justify-center min-h-screen items-center bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900">
@@ -12,18 +13,18 @@ export default function NotFoundPage() {
 					Sorry, we couldn’t find the page you’re looking for.
 				</p>
 				<div className="mt-10 flex items-center justify-center gap-x-6">
-					<a
-						href="#"
+					<Link
+						to="/"
 						className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500"
 					>
 						Go back home
-					</a>
-					<a
-						href="#"
+					</Link>
+					<Link
+						to="/customer-support"
 						className="text-sm font-semibold text-gray-900 dark:text-white"
 					>
 						Contact support <span aria-hidden="true">&rarr;</span>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</main>

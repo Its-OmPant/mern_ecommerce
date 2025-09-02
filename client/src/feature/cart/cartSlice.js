@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
 	addToCart,
+	clearCart,
 	getUserCartItems,
 	removeItemFromCart,
 	updateCart,
@@ -8,7 +9,7 @@ import {
 
 const initialState = {
 	items: [],
-	state: "idle",
+	status: "idle",
 	error: null,
 };
 
@@ -55,6 +56,16 @@ export const removeCartItemAsync = createAsyncThunk(
 	}
 );
 
+export const clearCartAsync = createAsyncThunk(
+	"cart/clearCart",
+	async (userId) => {
+		console.log("Clear Cart Async Called");
+		const response = await clearCart(userId);
+		console.log("CCA res: ", response);
+		return response;
+	}
+);
+
 export const cartSlice = createSlice({
 	name: "cartSlice",
 	initialState,
@@ -62,40 +73,51 @@ export const cartSlice = createSlice({
 	extraReducers: (builder) => {
 		builder
 			.addCase(addToCartAsync.pending, (state) => {
-				state.state = "loading";
+				state.status = "loading";
 			})
 			.addCase(addToCartAsync.fulfilled, (state, action) => {
-				state.state = "idle";
+				state.status = "idle";
 				if (action.payload !== null) {
 					state.items.push(action.payload);
 				}
 			})
 			.addCase(fetchCartItemsAsync.pending, (state) => {
-				state.state = "loading";
+				state.status = "loading";
 			})
 			.addCase(fetchCartItemsAsync.fulfilled, (state, action) => {
-				state.state = "idle";
+				state.status = "idle";
 				state.items = action.payload;
 			})
 			.addCase(updateCartAsync.pending, (state) => {
-				state.state = "loading";
+				state.status = "loading";
 			})
 			.addCase(updateCartAsync.fulfilled, (state, action) => {
-				state.state = "idle";
+				state.status = "idle";
 				const idx = state.items.findIndex(
 					(i) => i.id === action.payload.id
 				);
 				state.items[idx] = action.payload;
 			})
 			.addCase(removeCartItemAsync.pending, (state) => {
-				state.state = "loading";
+				state.status = "loading";
 			})
 			.addCase(removeCartItemAsync.fulfilled, (state, action) => {
-				state.state = "idle";
+				state.status = "idle";
 				const idx = state.items.findIndex(
 					(i) => i.id === action.payload.id
 				);
 				state.items.splice(idx, 1);
+			})
+			.addCase(clearCartAsync.pending, (state) => {
+				state.status = "loading";
+			})
+			.addCase(clearCartAsync.fulfilled, (state, action) => {
+				state.status = "idle";
+				let items = state.items.filter(
+					(i) => i.user_id != action.payload
+				);
+				console.log("ITEMS: ", items);
+				state.items = items;
 			});
 	},
 });

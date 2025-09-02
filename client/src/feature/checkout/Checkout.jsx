@@ -1,15 +1,18 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCartItems } from "../cart/cartSlice";
+import { clearCartAsync, selectCartItems } from "../cart/cartSlice";
 import { useState } from "react";
 import {
 	selectCurrentUser,
 	selectUserAddresses,
 	updateUserAsync,
 } from "../auth/authSlice";
+import { createOrderAsync } from "../order/orderSlice";
+import { unwrapResult } from "@reduxjs/toolkit";
 
 export default function Checkout() {
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const user = useSelector(selectCurrentUser);
 	const userSavedAddresses = useSelector(selectUserAddresses);
@@ -56,6 +59,33 @@ export default function Checkout() {
 	function handleAddressSelection(e) {
 		console.log(e.target.value);
 		setSelectedAddress(+e.target.value);
+	}
+
+	async function handleOrderCreation(e) {
+		e.preventDefault();
+		const placedOrder = await dispatch(
+			createOrderAsync({
+				user: user.id,
+				cartItems,
+				total_item_count,
+				total_price: items_total_price,
+				paymentMethod,
+				deliveryAddress: userSavedAddresses[selectedAddress],
+				status: "pending",
+			})
+		);
+
+		try {
+			const fulfilledVal = unwrapResult(placedOrder); // throws if rejected
+			if (fulfilledVal) {
+				navigate(`/order-success/${fulfilledVal.id}`);
+				dispatch(clearCartAsync(user.id));
+				// todos
+				// change the item stocks in server
+			}
+		} catch (error) {
+			console.log("Error:: ", error);
+		}
 	}
 
 	return (
@@ -345,10 +375,10 @@ export default function Checkout() {
 																			viewBox="0 0 24 24"
 																			fill="none"
 																			stroke="currentColor"
-																			stroke-width="2"
-																			stroke-linecap="round"
-																			stroke-linejoin="round"
-																			class="lucide lucide-mail-icon lucide-mail"
+																			strokeWidth="2"
+																			strokeLinecap="round"
+																			strokeLinejoin="round"
+																			className="lucide lucide-mail-icon lucide-mail"
 																		>
 																			<path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
 																			<rect
@@ -372,10 +402,10 @@ export default function Checkout() {
 																				viewBox="0 0 24 24"
 																				fill="none"
 																				stroke="currentColor"
-																				stroke-width="2"
-																				stroke-linecap="round"
-																				stroke-linejoin="round"
-																				class="lucide lucide-phone-icon lucide-phone"
+																				strokeWidth="2"
+																				strokeLinecap="round"
+																				strokeLinejoin="round"
+																				className="lucide lucide-phone-icon lucide-phone"
 																			>
 																				<path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
 																			</svg>
@@ -394,10 +424,10 @@ export default function Checkout() {
 																		viewBox="0 0 24 24"
 																		fill="none"
 																		stroke="currentColor"
-																		stroke-width="2"
-																		stroke-linecap="round"
-																		stroke-linejoin="round"
-																		class="lucide lucide-map-pin-icon lucide-map-pin"
+																		strokeWidth="2"
+																		strokeLinecap="round"
+																		strokeLinejoin="round"
+																		className="lucide lucide-map-pin-icon lucide-map-pin"
 																	>
 																		<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
 																		<circle
@@ -553,12 +583,12 @@ export default function Checkout() {
 									<p>${items_total_price}</p>
 								</div>
 								<div className="mt-6">
-									<Link
-										to="/pay"
-										className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-indigo-700"
+									<button
+										onClick={handleOrderCreation}
+										className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-indigo-700"
 									>
 										Pay
-									</Link>
+									</button>
 								</div>
 								<div className="mt-6 flex justify-center text-center text-sm text-gray-500">
 									<p>
