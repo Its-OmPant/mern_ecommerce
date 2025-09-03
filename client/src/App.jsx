@@ -21,6 +21,8 @@ import { useEffect } from "react";
 import { selectAuthenticatedUser } from "./feature/auth/authSlice";
 import UserAddressForm from "./feature/user/components/UserAddressForm";
 import { getUserDataAsync } from "./feature/user/userSlice";
+import Signout from "./feature/auth/components/Signout";
+import ForgotPassword from "./feature/auth/components/ForgotPassword";
 
 const router = createBrowserRouter([
 	{
@@ -63,6 +65,10 @@ const router = createBrowserRouter([
 				path: "/orders",
 				element: <UserOrdersPage />,
 			},
+			{
+				path: "/signout",
+				element: <Signout />,
+			},
 		],
 		errorElement: <NotFoundPage />,
 	},
@@ -73,6 +79,10 @@ const router = createBrowserRouter([
 	{
 		path: "/sign-up",
 		element: <SignupPage />,
+	},
+	{
+		path: "/forgot-password",
+		element: <ForgotPassword />,
 	},
 ]);
 

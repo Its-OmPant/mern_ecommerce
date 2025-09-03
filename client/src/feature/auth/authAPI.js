@@ -55,3 +55,8 @@ export const checkUser = async (credentials) => {
 		throw new Error("Something Went Wrong");
 	}
 };
+
+export const signout = async (userId) => {
+	// todo: will remove session details from backend if any
+	return userId;
+};

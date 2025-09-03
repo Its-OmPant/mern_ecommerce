@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchUserOrders, getUserData, updateUser } from "./userApi";
-
+import { signOutUserAsync } from "../auth/authSlice";
 const initialState = {
 	userOrders: [],
 	status: "idle",
@@ -54,6 +54,11 @@ export const userSlice = createSlice({
 			.addCase(updateUserAsync.fulfilled, (state, action) => {
 				state.status = "idle";
 				state.loggedInUser = action.payload;
+			})
+			// triggers when logout action dispatched in auth slice
+			.addCase(signOutUserAsync.fulfilled, (state) => {
+				state.status = "idle";
+				state.loggedInUser = null;
 			});
 	},
 });
