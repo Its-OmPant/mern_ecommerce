@@ -1,12 +1,15 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUserOrdersAsync, selectUserOrders } from "../userSlice";
-import { selectCurrentUser } from "../../auth/authSlice";
+import {
+	fetchUserOrdersAsync,
+	selectLoggedInUser,
+	selectUserOrders,
+} from "../userSlice";
 import Collapsible from "../../../components/Collapsible";
 
 export default function UserOrders() {
 	const dispatch = useDispatch();
-	const user = useSelector(selectCurrentUser);
+	const user = useSelector(selectLoggedInUser);
 	const userOrders = useSelector(selectUserOrders);
 
 	useEffect(() => {

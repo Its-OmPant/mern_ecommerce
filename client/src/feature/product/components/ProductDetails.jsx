@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import { fetchProductByIdAsync, selectCurrentProduct } from "../productSlice";
 import { addToCartAsync, selectCartItems } from "../../cart/cartSlice";
-import { selectCurrentUser } from "../../auth/authSlice";
+import { selectLoggedInUser } from "../../user/userSlice";
 
 const colors = [
 	{
@@ -51,7 +51,7 @@ export default function ProductDetails() {
 	const { id } = useParams();
 	const dispatch = useDispatch();
 	const product = useSelector(selectCurrentProduct);
-	const user = useSelector(selectCurrentUser);
+	const user = useSelector(selectLoggedInUser);
 	const navigator = useNavigate();
 
 	const breadcrumbs = [

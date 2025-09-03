@@ -1,8 +1,22 @@
-import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../../auth/authSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router";
+import { selectLoggedInUser, updateUserAsync } from "../userSlice";
 
 export default function UserProfile() {
-	const user = useSelector(selectCurrentUser);
+	const user = useSelector(selectLoggedInUser);
+	const dispatch = useDispatch();
+
+	function handleAddressRemove(e, idx) {
+		e.preventDefault();
+		let updated_user = {
+			...user,
+			addresses: [...user.addresses],
+		};
+		updated_user.addresses.splice(idx, 1);
+		dispatch(updateUserAsync(updated_user));
+		alert("Successfully Deleted");
+	}
+
 	return (
 		<div className="bg-white">
 			<div className="w-full m-2 sm:max-w-3xl mx-auto py-10">
@@ -14,7 +28,10 @@ export default function UserProfile() {
 						<span className="text-lg font-semibold text-pink-900">
 							Saved Addresses
 						</span>
-						<div className="relative group">
+						<Link
+							to="/profile/address/add"
+							className="relative group"
+						>
 							<span className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 absolute -top-6 left-1/2 -translate-x-1/2 text-xs bg-blue-900 text-white p-1 rounded-md">
 								Add
 							</span>
@@ -36,7 +53,7 @@ export default function UserProfile() {
 									<line x1="8" x2="16" y1="12" y2="12" />
 								</svg>
 							</button>
-						</div>
+						</Link>
 					</div>
 					{user?.addresses?.length > 0 ? (
 						user.addresses.map((add, idx) => (
@@ -45,12 +62,14 @@ export default function UserProfile() {
 								className="flex flex-col gap-1 basis-full bg-slate-100 my-3 px-6 py-4 rounded-md"
 							>
 								<div className="flex gap-10 relative">
-									<div className="absolute top-1 right-4 flex gap-2">
+									<div className="absolute top-1 right-4 flex gap-2 items-baseline">
 										<div className="relative group">
-											<span className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 absolute -top-5 left-1/2 -translate-x-1/2 text-xs bg-teal-900 text-white px-1 rounded-md">
+											<span className="invisible pointer-events-none opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 absolute -top-5 left-1/2 -translate-x-1/2 text-xs bg-teal-900 text-white px-1 rounded-md">
 												Edit
 											</span>
-											<button>
+											<Link
+												to={`/profile/address/edit/${idx}`}
+											>
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													width="16"
@@ -67,13 +86,17 @@ export default function UserProfile() {
 													<path d="M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
 													<path d="M8 18h1" />
 												</svg>
-											</button>
+											</Link>
 										</div>
 										<div className="relative group">
-											<span className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 absolute -top-5 left-1/2 -translate-x-1/2 text-xs bg-red-700 text-white px-1 rounded-md">
+											<span className="invisible pointer-events-none opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 absolute -top-5 left-1/2 -translate-x-1/2 text-xs bg-red-700 text-white px-1 rounded-md">
 												Delete
 											</span>
-											<button>
+											<button
+												onClick={(e) =>
+													handleAddressRemove(e, idx)
+												}
+											>
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													width="16"

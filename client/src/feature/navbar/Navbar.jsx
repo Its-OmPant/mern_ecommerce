@@ -19,7 +19,7 @@ import {
 import { Link } from "react-router";
 import { useSelector } from "react-redux";
 import { selectCartItems } from "../cart/cartSlice";
-import { selectCurrentUser } from "../auth/authSlice";
+import { selectLoggedInUser } from "../user/userSlice";
 
 const navigation = [
 	{ name: "Home", to: "/", current: true },
@@ -45,7 +45,7 @@ function classNames(...classes) {
 }
 
 function Navbar() {
-	const user = useSelector(selectCurrentUser);
+	const user = useSelector(selectLoggedInUser);
 	const allCartItems = useSelector(selectCartItems);
 	const cartItems = allCartItems.filter((i) => i.user_id === user.id);
 

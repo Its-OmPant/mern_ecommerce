@@ -55,31 +55,3 @@ export const checkUser = async (credentials) => {
 		throw new Error("Something Went Wrong");
 	}
 };
-
-export const updateUser = async (updatedUser) => {
-	try {
-		const response = await fetch(
-			`http://localhost:3000/users/${updatedUser.id}`,
-			{
-				method: "PATCH",
-				headers: {
-					"content-type": "application/json",
-				},
-				body: JSON.stringify(updatedUser),
-			}
-		);
-
-		if (!response.ok) {
-			throw new Error(
-				"Error: ",
-				response.statusText,
-				"Code: ",
-				response.status
-			);
-		}
-		const res = await response.json();
-		return res;
-	} catch (error) {
-		console.log("Error while updating user :: ", error);
-	}
-};

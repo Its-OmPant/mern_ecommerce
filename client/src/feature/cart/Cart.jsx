@@ -5,10 +5,10 @@ import {
 	selectCartItems,
 	updateCartAsync,
 } from "./cartSlice";
-import { selectCurrentUser } from "../auth/authSlice";
+import { selectLoggedInUser } from "../user/userSlice";
 
 export default function Cart() {
-	const user = useSelector(selectCurrentUser);
+	const user = useSelector(selectLoggedInUser);
 	const allCartItems = useSelector(selectCartItems);
 	const cartItems = allCartItems.filter((i) => i.user_id === user.id);
 	const dispatch = useDispatch();

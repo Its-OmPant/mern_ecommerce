@@ -2,7 +2,7 @@ import { Link, Navigate } from "react-router";
 import { useForm } from "react-hook-form";
 import {
 	loginUserAsync,
-	selectCurrentUser,
+	selectAuthenticatedUser,
 	selectErrorStatus,
 } from "../authSlice";
 import { useSelector, useDispatch } from "react-redux";
@@ -14,13 +14,9 @@ function Login() {
 		formState: { errors },
 	} = useForm();
 
-	const user = useSelector(selectCurrentUser);
+	const user = useSelector(selectAuthenticatedUser);
 	const loginErrorStatus = useSelector(selectErrorStatus);
 	const dispatch = useDispatch();
-
-	if (user) {
-		return <Navigate to="/" />;
-	}
 
 	function handleFormSubmission(data) {
 		dispatch(loginUserAsync(data));

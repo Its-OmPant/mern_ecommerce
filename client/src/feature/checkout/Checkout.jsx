@@ -3,18 +3,18 @@ import { Link, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCartAsync, selectCartItems } from "../cart/cartSlice";
 import { useState } from "react";
-import {
-	selectCurrentUser,
-	selectUserAddresses,
-	updateUserAsync,
-} from "../auth/authSlice";
 import { createOrderAsync } from "../order/orderSlice";
 import { unwrapResult } from "@reduxjs/toolkit";
+import {
+	selectLoggedInUser,
+	updateUserAsync,
+	selectUserAddresses,
+} from "../user/userSlice";
 
 export default function Checkout() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
-	const user = useSelector(selectCurrentUser);
+	const user = useSelector(selectLoggedInUser);
 	const userSavedAddresses = useSelector(selectUserAddresses);
 	const {
 		register,

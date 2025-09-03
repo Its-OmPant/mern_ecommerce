@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../authSlice";
+import { selectAuthenticatedUser } from "../authSlice";
 import { Navigate } from "react-router";
 
 function Secured({ children }) {
-	const user = useSelector(selectCurrentUser);
+	const user = useSelector(selectAuthenticatedUser);
 
 	if (!user) {
 		return <Navigate to="/login" />;

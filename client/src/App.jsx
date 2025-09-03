@@ -18,7 +18,9 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCartItemsAsync } from "./feature/cart/cartSlice";
 import { useEffect } from "react";
-import { selectCurrentUser } from "./feature/auth/authSlice";
+import { selectAuthenticatedUser } from "./feature/auth/authSlice";
+import UserAddressForm from "./feature/user/components/UserAddressForm";
+import { getUserDataAsync } from "./feature/user/userSlice";
 
 const router = createBrowserRouter([
 	{
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
 				element: <UserProfilePage />,
 			},
 			{
+				path: "/profile/address/:verb",
+				element: <UserAddressForm />,
+			},
+			{
+				path: "/profile/address/:verb/:idx",
+				element: <UserAddressForm />,
+			},
+			{
 				path: "/orders",
 				element: <UserOrdersPage />,
 			},
@@ -67,12 +77,13 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-	const user = useSelector(selectCurrentUser);
+	const user = useSelector(selectAuthenticatedUser);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		if (user) {
 			dispatch(fetchCartItemsAsync(user.id));
+			dispatch(getUserDataAsync(user.id));
 		}
 	}, [dispatch, user]);
 	return <RouterProvider router={router} />;
