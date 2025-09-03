@@ -14,15 +14,18 @@ export default function OrderSuccessPage() {
 					<p>Order ID: #{id}</p>
 					<p>
 						To see details Navigate to{" "}
-						<span className="text-teal-700 font-semibold">
+						<Link
+							to="/orders"
+							className="text-teal-700 font-semibold"
+						>
 							Profile &gt; My orders
-						</span>
+						</Link>
 					</p>
 					<Link
 						to="/"
 						className="px-4 py-2 rounded bg-teal-800 text-white my-5 hover:shadow-xl"
 					>
-						back to Home Page
+						Back to Home Page
 					</Link>
 				</div>
 			</div>

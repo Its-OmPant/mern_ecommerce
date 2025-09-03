@@ -16,7 +16,6 @@ const initialState = {
 export const addToCartAsync = createAsyncThunk(
 	"cart/addToCart",
 	async (item, thunkAPI) => {
-		console.log("ADD TO CART CALLED");
 		const state = thunkAPI.getState();
 
 		const item_found = state.cart.items.find(
@@ -59,9 +58,7 @@ export const removeCartItemAsync = createAsyncThunk(
 export const clearCartAsync = createAsyncThunk(
 	"cart/clearCart",
 	async (userId) => {
-		console.log("Clear Cart Async Called");
 		const response = await clearCart(userId);
-		console.log("CCA res: ", response);
 		return response;
 	}
 );
@@ -116,7 +113,6 @@ export const cartSlice = createSlice({
 				let items = state.items.filter(
 					(i) => i.user_id != action.payload
 				);
-				console.log("ITEMS: ", items);
 				state.items = items;
 			});
 	},

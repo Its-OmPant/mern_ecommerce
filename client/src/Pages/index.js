@@ -7,6 +7,8 @@ import NotFoundPage from "./NotFoundPage";
 import CheckoutPage from "./CheckoutPage";
 import ProductDetailsPage from "./ProductDetailsPage";
 import OrderSuccessPage from "./OrderSuccessPage";
+import UserOrdersPage from "./UserOrdersPage";
+import UserProfilePage from "./UserProfilePage";
 
 export {
 	HomePage,
@@ -18,4 +20,6 @@ export {
 	CheckoutPage,
 	ProductDetailsPage,
 	OrderSuccessPage,
+	UserOrdersPage,
+	UserProfilePage,
 };

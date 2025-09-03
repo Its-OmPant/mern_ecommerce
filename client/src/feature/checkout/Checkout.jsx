@@ -57,12 +57,15 @@ export default function Checkout() {
 	}
 
 	function handleAddressSelection(e) {
-		console.log(e.target.value);
 		setSelectedAddress(+e.target.value);
 	}
 
 	async function handleOrderCreation(e) {
 		e.preventDefault();
+		if (!selectedAddress || !paymentMethod) {
+			alert("Please select Delivery address and Payment Method");
+			return;
+		}
 		const placedOrder = await dispatch(
 			createOrderAsync({
 				user: user.id,
@@ -70,7 +73,7 @@ export default function Checkout() {
 				total_item_count,
 				total_price: items_total_price,
 				paymentMethod,
-				deliveryAddress: userSavedAddresses[selectedAddress],
+				deliveryAddress: userSavedAddresses[selectedAddress - 1],
 				status: "pending",
 			})
 		);
@@ -333,7 +336,7 @@ export default function Checkout() {
 						) : (
 							// Tab 2 content
 							<div className="mt-10 space-y-2">
-								{userSavedAddresses?.length > 1 ? (
+								{userSavedAddresses?.length > 0 ? (
 									<fieldset className="w">
 										<legend className="text-sm/6 font-semibold text-gray-900 dark:text-white">
 											Choose from existing address
@@ -346,13 +349,13 @@ export default function Checkout() {
 															id={add + idx}
 															name="address"
 															type="radio"
-															value={idx}
+															value={idx + 1}
 															onChange={
 																handleAddressSelection
 															}
 															checked={
 																selectedAddress ===
-																idx
+																idx + 1
 															}
 															className="flex-none relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white not-checked:before:hidden checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 dark:border-white/10 dark:bg-white/5 dark:checked:border-indigo-500 dark:checked:bg-indigo-500 dark:focus-visible:outline-indigo-500 dark:disabled:border-white/5 dark:disabled:bg-white/10 dark:disabled:before:bg-white/20 forced-colors:appearance-auto forced-colors:before:hidden"
 														/>

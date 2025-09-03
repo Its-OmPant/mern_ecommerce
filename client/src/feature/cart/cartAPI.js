@@ -82,11 +82,8 @@ export const updateCart = async (item) => {
 
 export const clearCart = async (userID) => {
 	const allItems = await getUserCartItems(userID);
-	console.log("Clear Cart Called");
-	console.log("Items to remove: ", allItems);
 	for (let item of allItems) {
 		await removeItemFromCart(item.id);
-		console.log("Removing Item");
 	}
 	return userID;
 };

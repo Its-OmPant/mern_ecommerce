@@ -24,10 +24,22 @@ import { selectCurrentUser } from "../auth/authSlice";
 const navigation = [
 	{ name: "Home", to: "/", current: true },
 	{ name: "About", to: "/about", current: false },
-	{ name: "Login", href: "/login", current: false },
-	{ name: "Signup", href: "/sign-up", current: false },
 ];
 
+const menu_items = [
+	{
+		name: "My Profile",
+		to: "/profile",
+	},
+	{
+		name: "My Orders",
+		to: "/orders",
+	},
+	{
+		name: "Signout",
+		to: "/signout",
+	},
+];
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
 }
@@ -119,30 +131,16 @@ function Navbar() {
 								transition
 								className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg outline outline-black/5 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
 							>
-								<MenuItem>
-									<a
-										href="#"
-										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden dark:text-gray-300 dark:data-focus:bg-white/5"
-									>
-										Your profile
-									</a>
-								</MenuItem>
-								<MenuItem>
-									<a
-										href="#"
-										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden dark:text-gray-300 dark:data-focus:bg-white/5"
-									>
-										Settings
-									</a>
-								</MenuItem>
-								<MenuItem>
-									<a
-										href="#"
-										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden dark:text-gray-300 dark:data-focus:bg-white/5"
-									>
-										Sign out
-									</a>
-								</MenuItem>
+								{menu_items.map((item, idx) => (
+									<MenuItem key={idx}>
+										<Link
+											to={item.to}
+											className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden dark:text-gray-300 dark:data-focus:bg-white/5"
+										>
+											{item.name}
+										</Link>
+									</MenuItem>
+								))}
 							</MenuItems>
 						</Menu>
 					</div>

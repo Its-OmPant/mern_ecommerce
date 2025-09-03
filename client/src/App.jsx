@@ -12,6 +12,8 @@ import {
 	CheckoutPage,
 	ProductDetailsPage,
 	OrderSuccessPage,
+	UserProfilePage,
+	UserOrdersPage,
 } from "./Pages";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCartItemsAsync } from "./feature/cart/cartSlice";
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
 			{
 				path: "/order-success/:id",
 				element: <OrderSuccessPage />,
+			},
+			{
+				path: "/profile",
+				element: <UserProfilePage />,
+			},
+			{
+				path: "/orders",
+				element: <UserOrdersPage />,
 			},
 		],
 		errorElement: <NotFoundPage />,
