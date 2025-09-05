@@ -22,8 +22,9 @@ import { selectCartItems } from "../cart/cartSlice";
 import { selectLoggedInUser } from "../user/userSlice";
 
 const navigation = [
-	{ name: "Home", to: "/", current: true },
-	{ name: "About", to: "/about", current: false },
+	{ name: "Home", to: "/", current: true, user: true },
+	{ name: "About", to: "/about", current: false, user: true },
+	{ name: "Dashboard", to: "/admin", current: false, admin: true },
 ];
 
 const menu_items = [
@@ -74,23 +75,29 @@ function Navbar() {
 					<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 						<div className="hidden sm:ml-6 sm:block">
 							<div className="flex space-x-4">
-								{navigation.map((item) => (
-									<Link
-										key={item.name}
-										to={item.to}
-										aria-current={
-											item.current ? "page" : undefined
-										}
-										className={classNames(
-											item.current
-												? "bg-gray-900 text-white dark:bg-gray-950/50"
-												: "text-gray-300 hover:bg-white/5 hover:text-white",
-											"rounded-md px-3 py-2 text-sm font-medium"
-										)}
-									>
-										{item.name}
-									</Link>
-								))}
+								{navigation.map((item) => {
+									return (
+										item[user?.role] && (
+											<Link
+												key={item.name}
+												to={item.to}
+												aria-current={
+													item.current
+														? "page"
+														: undefined
+												}
+												className={classNames(
+													item.current
+														? "bg-gray-900 text-white dark:bg-gray-950/50"
+														: "text-gray-300 hover:bg-white/5 hover:text-white",
+													"rounded-md px-3 py-2 text-sm font-medium"
+												)}
+											>
+												{item.name}
+											</Link>
+										)
+									);
+								})}
 							</div>
 						</div>
 					</div>

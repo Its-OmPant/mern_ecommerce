@@ -1,8 +1,5 @@
-import Pagination from "./Pagination";
 import { Link } from "react-router";
 import { StarIcon } from "@heroicons/react/20/solid";
-
-// const products = Data.products;
 
 export default function ProductGrid({ products, loadState }) {
 	if (loadState.toLowerCase() == "loading") return <h1>Loading</h1>;

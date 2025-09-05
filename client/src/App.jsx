@@ -1,6 +1,3 @@
-import { Outlet } from "react-router";
-
-// routing
 import { createBrowserRouter, RouterProvider } from "react-router";
 import {
 	HomePage,
@@ -14,6 +11,9 @@ import {
 	OrderSuccessPage,
 	UserProfilePage,
 	UserOrdersPage,
+	AboutPage,
+	AdminProductsPage,
+	AdminProductDetailsPage,
 } from "./Pages";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCartItemsAsync } from "./feature/cart/cartSlice";
@@ -23,6 +23,8 @@ import UserAddressForm from "./feature/user/components/UserAddressForm";
 import { getUserDataAsync } from "./feature/user/userSlice";
 import Signout from "./feature/auth/components/Signout";
 import ForgotPassword from "./feature/auth/components/ForgotPassword";
+import AdminProductForm from "./feature/admin/components/AdminProductForm";
+import { fetchBrandsAndCategoriesAsync } from "./feature/product/productSlice";
 
 const router = createBrowserRouter([
 	{
@@ -32,6 +34,10 @@ const router = createBrowserRouter([
 			{
 				path: "/",
 				element: <ProductsPage />,
+			},
+			{
+				path: "/about",
+				element: <AboutPage />,
 			},
 			{
 				path: "/product-details/:id",
@@ -73,6 +79,34 @@ const router = createBrowserRouter([
 		errorElement: <NotFoundPage />,
 	},
 	{
+		path: "/admin",
+		element: <HomePage />,
+		children: [
+			{
+				path: "",
+				element: <AdminProductsPage />,
+			},
+			{
+				path: "product-details/:id",
+				element: <AdminProductDetailsPage />,
+			},
+			{
+				path: "product/:verb",
+				element: <AdminProductForm />,
+			},
+			{
+				path: "product/:verb/:id",
+				element: <AdminProductForm />,
+			},
+
+			{
+				path: "signout",
+				element: <Signout />,
+			},
+		],
+		errorElement: <NotFoundPage />,
+	},
+	{
 		path: "/login",
 		element: <LoginPage />,
 	},
@@ -94,6 +128,7 @@ function App() {
 		if (user) {
 			dispatch(fetchCartItemsAsync(user.id));
 			dispatch(getUserDataAsync(user.id));
+			dispatch(fetchBrandsAndCategoriesAsync());
 		}
 	}, [dispatch, user]);
 	return <RouterProvider router={router} />;

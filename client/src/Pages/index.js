@@ -9,12 +9,17 @@ import ProductDetailsPage from "./ProductDetailsPage";
 import OrderSuccessPage from "./OrderSuccessPage";
 import UserOrdersPage from "./UserOrdersPage";
 import UserProfilePage from "./UserProfilePage";
+import AboutPage from "./AboutPage";
+
+import AdminProductsPage from "./AdminProductsPage";
+import AdminProductDetailsPage from "./AdminProductDetailsPage";
 
 export {
 	HomePage,
 	LoginPage,
 	SignupPage,
 	CartPage,
+	AboutPage,
 	ProductsPage,
 	NotFoundPage,
 	CheckoutPage,
@@ -22,4 +27,6 @@ export {
 	OrderSuccessPage,
 	UserOrdersPage,
 	UserProfilePage,
+	AdminProductsPage,
+	AdminProductDetailsPage,
 };

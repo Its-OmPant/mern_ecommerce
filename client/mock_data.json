@@ -1,67 +1,6 @@
 {
   "products": [
     {
-      "id": "1",
-      "title": "Essence Mascara Lash Princess",
-      "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
-      "category": "beauty",
-      "price": 9.99,
-      "discountPercentage": 10.48,
-      "rating": 2.56,
-      "stock": 99,
-      "tags": [
-        "beauty",
-        "mascara"
-      ],
-      "brandLabel": "Essence",
-      "brand": "essence",
-      "sku": "BEA-ESS-ESS-001",
-      "weight": 4,
-      "dimensions": {
-        "width": 15.14,
-        "height": 13.08,
-        "depth": 22.99
-      },
-      "warrantyInformation": "1 week warranty",
-      "shippingInformation": "Ships in 3-5 business days",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 3,
-          "comment": "Would not recommend!",
-          "date": "2025-04-30T09:41:02.053Z",
-          "reviewerName": "Eleanor Collins",
-          "reviewerEmail": "eleanor.collins@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Very satisfied!",
-          "date": "2025-04-30T09:41:02.053Z",
-          "reviewerName": "Lucas Gordon",
-          "reviewerEmail": "lucas.gordon@x.dummyjson.com"
-        },
-        {
-          "rating": 5,
-          "comment": "Highly impressed!",
-          "date": "2025-04-30T09:41:02.053Z",
-          "reviewerName": "Eleanor Collins",
-          "reviewerEmail": "eleanor.collins@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "No return policy",
-      "minimumOrderQuantity": 48,
-      "meta": {
-        "createdAt": "2025-04-30T09:41:02.053Z",
-        "updatedAt": "2025-04-30T09:41:02.053Z",
-        "barcode": "5784719087687",
-        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp"
-    },
-    {
       "id": "2",
       "title": "Eyeshadow Palette with Mirror",
       "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
@@ -124,59 +63,36 @@
     },
     {
       "id": "3",
-      "title": "Powder Canister",
+      "title": "Powder Canister Box",
       "description": "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.",
       "category": "beauty",
-      "price": 14.99,
+      "price": 16.99,
       "discountPercentage": 9.84,
-      "rating": 4.64,
-      "stock": 89,
+      "rating": 0,
+      "stock": 99,
       "tags": [
-        "beauty",
-        "face powder"
+        ""
       ],
-      "brandLabel": "Velvet Touch",
+      "brandLabel": "velvet-touch",
       "brand": "velvet-touch",
-      "sku": "BEA-VEL-POW-003",
-      "weight": 8,
+      "sku": "",
+      "weight": "N/A",
       "dimensions": {
-        "width": 29.27,
-        "height": 27.93,
-        "depth": 20.59
+        "width": "N/A",
+        "height": "N/A",
+        "depth": "N/A"
       },
-      "warrantyInformation": "3 months warranty",
-      "shippingInformation": "Ships in 1-2 business days",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 4,
-          "comment": "Would buy again!",
-          "date": "2025-04-30T09:41:02.053Z",
-          "reviewerName": "Alexander Jones",
-          "reviewerEmail": "alexander.jones@x.dummyjson.com"
-        },
-        {
-          "rating": 5,
-          "comment": "Highly impressed!",
-          "date": "2025-04-30T09:41:02.053Z",
-          "reviewerName": "Elijah Cruz",
-          "reviewerEmail": "elijah.cruz@x.dummyjson.com"
-        },
-        {
-          "rating": 1,
-          "comment": "Very dissatisfied!",
-          "date": "2025-04-30T09:41:02.053Z",
-          "reviewerName": "Avery Perez",
-          "reviewerEmail": "avery.perez@x.dummyjson.com"
-        }
-      ],
+      "warrantyInformation": "N/A",
+      "shippingInformation": "N/A",
+      "availabilityStatus": "N/A",
+      "reviews": [],
       "returnPolicy": "No return policy",
-      "minimumOrderQuantity": 22,
+      "minimumOrderQuantity": 1,
       "meta": {
-        "createdAt": "2025-04-30T09:41:02.053Z",
-        "updatedAt": "2025-04-30T09:41:02.053Z",
-        "barcode": "8418883906837",
-        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+        "createdAt": "",
+        "updatedAt": "",
+        "barcode": "",
+        "qrCode": ""
       },
       "images": [
         "https://cdn.dummyjson.com/product-images/beauty/powder-canister/1.webp"
@@ -4842,68 +4758,6 @@
       "thumbnail": "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/thumbnail.webp"
     },
     {
-      "id": "82",
-      "title": "New DELL XPS 13 9300 Laptop",
-      "description": "The New DELL XPS 13 9300 Laptop is a compact and powerful device, featuring a virtually borderless InfinityEdge display and high-end performance for various tasks.",
-      "category": "laptops",
-      "price": 1499.99,
-      "discountPercentage": 11.89,
-      "rating": 2.67,
-      "stock": 74,
-      "tags": [
-        "laptops"
-      ],
-      "brandLabel": "Dell",
-      "brand": "dell",
-      "sku": "LAP-DEL-DEL-082",
-      "weight": 2,
-      "dimensions": {
-        "width": 13.76,
-        "height": 29,
-        "depth": 21.42
-      },
-      "warrantyInformation": "2 year warranty",
-      "shippingInformation": "Ships in 2 weeks",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 3,
-          "comment": "Poor quality!",
-          "date": "2025-04-30T09:41:02.053Z",
-          "reviewerName": "Charlotte Lopez",
-          "reviewerEmail": "charlotte.lopez@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Very satisfied!",
-          "date": "2025-04-30T09:41:02.053Z",
-          "reviewerName": "Alice Smith",
-          "reviewerEmail": "alice.smith@x.dummyjson.com"
-        },
-        {
-          "rating": 2,
-          "comment": "Disappointing product!",
-          "date": "2025-04-30T09:41:02.053Z",
-          "reviewerName": "Ava Taylor",
-          "reviewerEmail": "ava.taylor@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "60 days return policy",
-      "minimumOrderQuantity": 1,
-      "meta": {
-        "createdAt": "2025-04-30T09:41:02.053Z",
-        "updatedAt": "2025-04-30T09:41:02.053Z",
-        "barcode": "5963805976904",
-        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/1.webp",
-        "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/2.webp",
-        "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/3.webp"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/thumbnail.webp"
-    },
-    {
       "id": "83",
       "title": "Blue & Black Check Shirt",
       "description": "The Blue & Black Check Shirt is a stylish and comfortable men's shirt featuring a classic check pattern. Made from high-quality fabric, it's suitable for both casual and semi-formal occasions.",
@@ -6045,6 +5899,82 @@
         "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/3.webp"
       ],
       "thumbnail": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp"
+    },
+    {
+      "id": "2966",
+      "title": "Armani Suite",
+      "description": "A good looking armani suite. Beautiful Looking. Rich Texture",
+      "category": "mens-shirts",
+      "price": 870,
+      "discountPercentage": 10,
+      "rating": 0,
+      "stock": 78,
+      "tags": [
+        ""
+      ],
+      "brandLabel": "fashion-trends",
+      "brand": "fashion-trends",
+      "sku": "",
+      "weight": "N/A",
+      "dimensions": {
+        "width": "N/A",
+        "height": "N/A",
+        "depth": "N/A"
+      },
+      "warrantyInformation": "N/A",
+      "shippingInformation": "N/A",
+      "availabilityStatus": "N/A",
+      "reviews": [],
+      "returnPolicy": "No return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "",
+        "updatedAt": "",
+        "barcode": "",
+        "qrCode": ""
+      },
+      "images": [
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTwbWNj0KfFW_0MUTkXiOAriWYx8m7PsITbMm7IKWhHqLFt4CGB7yfnUOc1f_2hSqK-RktenQZ7nRzJPxkXfrjO9IgvjJd2KT7KY4MNqstkqrLdUGfqSROduA"
+      ],
+      "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTwbWNj0KfFW_0MUTkXiOAriWYx8m7PsITbMm7IKWhHqLFt4CGB7yfnUOc1f_2hSqK-RktenQZ7nRzJPxkXfrjO9IgvjJd2KT7KY4MNqstkqrLdUGfqSROduA"
+    },
+    {
+      "id": "d534",
+      "title": "Apple Speaker",
+      "description": "Ultra Luxary AppleSpeaker",
+      "category": "mobile-accessories",
+      "price": 299,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 150,
+      "tags": [
+        ""
+      ],
+      "brandLabel": "apple",
+      "brand": "apple",
+      "sku": "",
+      "weight": "N/A",
+      "dimensions": {
+        "width": "N/A",
+        "height": "N/A",
+        "depth": "N/A"
+      },
+      "warrantyInformation": "N/A",
+      "shippingInformation": "N/A",
+      "availabilityStatus": "N/A",
+      "reviews": [],
+      "returnPolicy": "No return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "",
+        "updatedAt": "",
+        "barcode": "",
+        "qrCode": ""
+      },
+      "images": [
+        "https://m.media-amazon.com/images/I/713TUYjagQL._UF1000,1000_QL80_.jpg"
+      ],
+      "thumbnail": "https://m.media-amazon.com/images/I/713TUYjagQL._UF1000,1000_QL80_.jpg"
     }
   ],
   "filters": [
@@ -6301,6 +6231,7 @@
       "id": "7baf",
       "email": "ompant992@gmail.com",
       "password": "Qwerty123",
+      "role": "user",
       "addresses": [
         {
           "fullName": "Om Pant",
@@ -6326,6 +6257,7 @@
       "id": "3476",
       "email": "Deep@hello.ai",
       "password": "Aa123456",
+      "role": "user",
       "addresses": [
         {
           "fullName": "Deepu",
@@ -6337,6 +6269,13 @@
           "country": "India"
         }
       ]
+    },
+    {
+      "id": "b878",
+      "email": "admin@hello.ai",
+      "password": "Admin123",
+      "addresses": [],
+      "role": "admin"
     }
   ],
   "cart": [],

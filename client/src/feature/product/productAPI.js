@@ -95,3 +95,98 @@ export async function getProductById(id) {
 		return { data: [], error };
 	}
 }
+
+export async function addProduct(product) {
+	try {
+		const response = await fetch(`http://localhost:3000/products`, {
+			method: "POST",
+			headers: {
+				"Content-type": "application/json",
+			},
+			body: JSON.stringify(product),
+		});
+
+		if (!response.ok) {
+			throw new Error(
+				`Product Creating Failed. Error: ${response.statusText} Code: ${response.status}`
+			);
+		}
+
+		const prd = await response.json();
+		return prd;
+	} catch (error) {
+		console.log("ProductCreationError:: ", error);
+	}
+}
+
+export async function deleteProduct(id) {
+	try {
+		const response = await fetch(`http://localhost:3000/products/${id}`, {
+			method: "DELETE",
+			headers: {
+				"Content-type": "application/json",
+			},
+		});
+
+		if (!response.ok) {
+			throw new Error(
+				`Product Deletion Failed. Error: ${response.statusText} Code: ${response.status}`
+			);
+		}
+
+		const prd = await response.json();
+		return prd;
+	} catch (error) {
+		console.log("ProductDeletionError:: ", error);
+	}
+}
+
+export async function updateProduct(product) {
+	try {
+		const response = await fetch(
+			`http://localhost:3000/products/${product.id}`,
+			{
+				method: "PATCH",
+				headers: {
+					"Content-type": "application/json",
+				},
+				body: JSON.stringify(product),
+			}
+		);
+
+		if (!response.ok) {
+			throw new Error(
+				`Product Updation Failed. Error: ${response.statusText} Code: ${response.status}`
+			);
+		}
+
+		const prd = await response.json();
+		return prd;
+	} catch (error) {
+		console.log("ProductUpdationError:: ", error);
+	}
+}
+
+export async function fetchAllBrandsAndCategories() {
+	try {
+		const response = await fetch("http://localhost:3000/products");
+		if (!response.ok) {
+			throw new Error(`Server error: ${response.status}`);
+		}
+		const allProducts = await response.json();
+		const brands = new Set();
+		const categories = new Set();
+
+		allProducts.forEach((product) => {
+			brands.add(product.brand);
+			categories.add(product.category);
+		});
+
+		return {
+			brands: Array.from(brands),
+			categories: Array.from(categories),
+		};
+	} catch (error) {
+		console.error("Failed to fetch Brands and Categories:", error);
+	}
+}

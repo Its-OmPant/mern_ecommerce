@@ -19,6 +19,7 @@ function Signup() {
 				email: data.email,
 				password: data.password,
 				addresses: [],
+				role: "user", // will be added by backend later
 			})
 		);
 		alert("User Registration Successful");
