@@ -24,7 +24,8 @@ import { selectLoggedInUser } from "../user/userSlice";
 const navigation = [
 	{ name: "Home", to: "/", current: true, user: true },
 	{ name: "About", to: "/about", current: false, user: true },
-	{ name: "Dashboard", to: "/admin", current: false, admin: true },
+	{ name: "Home", to: "/admin", current: false, admin: true },
+	{ name: "Orders", to: "/admin/orders", current: false, admin: true },
 ];
 
 const menu_items = [

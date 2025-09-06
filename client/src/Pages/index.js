@@ -13,6 +13,7 @@ import AboutPage from "./AboutPage";
 
 import AdminProductsPage from "./AdminProductsPage";
 import AdminProductDetailsPage from "./AdminProductDetailsPage";
+import AdminOrdersPage from "./AdminOrdersPage";
 
 export {
 	HomePage,
@@ -29,4 +30,5 @@ export {
 	UserProfilePage,
 	AdminProductsPage,
 	AdminProductDetailsPage,
+	AdminOrdersPage,
 };

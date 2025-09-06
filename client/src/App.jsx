@@ -14,6 +14,7 @@ import {
 	AboutPage,
 	AdminProductsPage,
 	AdminProductDetailsPage,
+	AdminOrdersPage,
 } from "./Pages";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCartItemsAsync } from "./feature/cart/cartSlice";
@@ -36,43 +37,43 @@ const router = createBrowserRouter([
 				element: <ProductsPage />,
 			},
 			{
-				path: "/about",
+				path: "about",
 				element: <AboutPage />,
 			},
 			{
-				path: "/product-details/:id",
+				path: "product-details/:id",
 				element: <ProductDetailsPage />,
 			},
 			{
-				path: "/cart",
+				path: "cart",
 				element: <CartPage />,
 			},
 			{
-				path: "/checkout",
+				path: "checkout",
 				element: <CheckoutPage />,
 			},
 			{
-				path: "/order-success/:id",
+				path: "order-success/:id",
 				element: <OrderSuccessPage />,
 			},
 			{
-				path: "/profile",
+				path: "profile",
 				element: <UserProfilePage />,
 			},
 			{
-				path: "/profile/address/:verb",
+				path: "profile/address/:verb",
 				element: <UserAddressForm />,
 			},
 			{
-				path: "/profile/address/:verb/:idx",
+				path: "profile/address/:verb/:idx",
 				element: <UserAddressForm />,
 			},
 			{
-				path: "/orders",
+				path: "orders",
 				element: <UserOrdersPage />,
 			},
 			{
-				path: "/signout",
+				path: "signout",
 				element: <Signout />,
 			},
 		],
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
 				element: <AdminProductsPage />,
 			},
 			{
+				path: "orders",
+				element: <AdminOrdersPage />,
+			},
+			{
 				path: "product-details/:id",
 				element: <AdminProductDetailsPage />,
 			},
@@ -98,7 +103,6 @@ const router = createBrowserRouter([
 				path: "product/:verb/:id",
 				element: <AdminProductForm />,
 			},
-
 			{
 				path: "signout",
 				element: <Signout />,
@@ -107,15 +111,15 @@ const router = createBrowserRouter([
 		errorElement: <NotFoundPage />,
 	},
 	{
-		path: "/login",
+		path: "login",
 		element: <LoginPage />,
 	},
 	{
-		path: "/sign-up",
+		path: "sign-up",
 		element: <SignupPage />,
 	},
 	{
-		path: "/forgot-password",
+		path: "forgot-password",
 		element: <ForgotPassword />,
 	},
 ]);
